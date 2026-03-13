@@ -1,16 +1,46 @@
 ---
-title: "Çalışma 1"
+title: "Ödev 1"
 ---
 
-\
-(Aşağıdakiler örnek olarak verilmiştir.)
+## Video Özeti
 
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
+**Video:** Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Kerem Demirtaş & Erdi Daşdemir
 
-## (a)
+**Video Linki:** [Videoyu İzle](https://youtu.be/cUPtQEyaswM?si=kDHRkxX3Wp22_Vwo){target="_blank"}
 
-```{r}
-1 + 1
-```
+### Özet
 
-## (b)
+Kerem Demirtaş, veri biliminin sadece istatistik veya kodlama değil, **problem tanımlama ve alan uzmanlığı** gerektiren disiplinler arası bir alan olduğunu vurgulamaktadır. Endüstri mühendisliğindeki modelleme ve yöneylem araştırması mantığı veri biliminin temelini oluşturur; nitekim tipik bir veri bilimi projesi, Endüstri Mühendisliğin'de olduğu gibi net bir problem tanımıyla başlar.
+
+Veri bilimi süreci; problem tanımı, veri toplama, keşifçi veri analizi, modelleme, değerlendirme ve canlıya alma adımlarından oluşur. Demirtaş, otonom araçların **konvoy oluşturması (platooning)** üzerine yaptığı doktora çalışmasıyla, araçların birbiriyle haberleşerek trafik akışını nasıl optimize edebileceğini ve "dur-kalk" dalgalanmalarını nasıl azaltabileceğini örneklemektedir.
+
+Kariyer gelişimi için **Python** dilini çok iyi öğrenmek ve programlama becerilerini güçlendirmek kritik bir tavsiyedir. Lisansüstü eğitim kararı akademik hedeflere veya sektöre göre verilmelidir; zira Türkiye şartlarında yüksek lisans her zaman doğrudan maaş artışı sağlamayabilir ancak yurt dışı hedefleri için değerlidir.
+
+---
+
+## Sorular
+
+### Açık Uçlu Soru
+
+**Soru:** Veri biliminde "alan uzmanlığı" (domain knowledge) neden vazgeçilmezdir?
+
+**Cevap:** Sadece teknik modelleme bilgisiyle gerçekçi sonuçlar üretilemez; veriyi doğru şekilde işlemek, doğru soruları sormak ve çıkan sonuçları iş hedefleriyle uyumlu şekilde yorumlayabilmek için ilgili sektörü veya problemi derinlemesine tanımak gerekir.
+
+---
+
+### Çoktan Seçmeli Soru
+
+**Soru:** Kerem Demirtaş, endüstri mühendislerinin piyasadaki değerini artırmak ve "programlama kaslarını" güçlendirmek için hangi programlama dilini öğrenmelerini özellikle tavsiye etmektedir?
+
+a) Java
+
+b) C++
+
+c) Python
+
+d) SQL
+
+**Doğru Cevap:** C
+
+**Açıklama:** Demirtaş, Python'un hem öğrenilmesinin kolay olması hem de nesne yönelimli ve fonksiyonel paradigmaları desteklemesi sayesinde veri biliminin her aşamasında (veri hazırlama, modelleme vb.) kullanılabileceğini belirterek bu dili şiddetle tavsiye etmektedir
+

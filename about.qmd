@@ -1,40 +1,113 @@
 ---
-title: "Hakkımda"
-sidebar: false 
+
+## Hakkımda
+
 ---
 
-![](assets/images/vesikalik.jpeg){fig-align="center"}
+![](assets/foto.jpg){width=150}
 
-# Eğitim
+## Miraç Beltekin
 
--   B.S., ................................., ....................................University, Turkey, 20xx - 20xx.
--   M.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
--   Ph.D.., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+**Proje Mühendisi**
 
-# İş Tecrübesi
+**İletişim:** mirac.beltekin@gmail.com · Ankara, Türkiye
 
-## Employements
+---
 
-1.  Firm xxx, position xx, year xxx
+## Eğitim
 
-2.  Firm yyy, position yyy, year yyy
+**Hacettepe Üniversitesi**  
 
-## Internships
+*2026 - Devam Ediyor*  
 
-1.  Firm aaa, position xx, year xxx
+Mühendislik Yönetimi, Yüksek Lisans
 
-2.  Firm bbb, position yyy, year yyy
+**Gazi Üniversitesi**  
 
-# Projects
+*2016 - 2021*  
 
-1.  TUBİTAK 1001..........................
+Endüstriyel Tasarım Mühendisliği, Lisans
 
-# Publications
+---
 
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Ozturk, D. (2022) “UAV Routing for Reconnaissance Mission: A Multi-Objective Orienteering Problem with Time-Dependent Prizes and Multiple Connections”, Computers & Operations Research, 145: 105882.
+## Deneyim
 
-# Competencies
+**Tripy Mobility Teknoloji A.Ş.**  
 
-R, Quarto, Git, Python
+*Ekim 2022 - Devam Ediyor*  
 
-# Hobbies
+Proje Mühendisi
+
+**MİA Teknoloji A.Ş.**  
+
+*Haziran 2020 - Ekim 2022*  
+
+Endüstriyel Tasarım Mühendisi
+
+**MFK Makina**  
+
+*Temmuz 2019*  
+
+Stajyer Mühendis
+
+**Özben Savunma**  
+
+*Temmuz 2018*  
+
+Stajyer Mühendis
+
+---
+
+## Sertifikalar
+
+- PMI Onaylı PMP® Sertifikası Eğitimi
+
+- Google UX Design Sertifikası
+
+- Google AI Essentials Sertifikası
+
+- İHA-2 Pilotluk Lisansı
+
+- AS 9100: Havacılık/Savunma Standartları
+
+- IATF 16949: Otomotiv Kalite Standartları
+
+---
+
+## Yetkinlikler
+
+- Uçtan Uca Ürün Yönetimi
+
+- Kapsam, Değişim ve Risk Yönetimi
+
+- Zaman ve Maliyet Planlaması
+
+- Ürün Geliştirme ve Üretim Takibi
+
+- Çevik ve Hibrit Proje Yönetimi
+
+- Saha Operasyonu ve Test Süreçleri
+
+- Paydaş Katılımı ve İletişim Yönetimi
+
+---
+
+## Program Bilgisi
+
+| | |
+|:---|:---|
+| ![](assets/icons/office.png){width=32} Microsoft Office | ![](assets/icons/autocad.png){width=32} AutoCAD |
+| | |
+| ![](assets/icons/figma.png){width=32} Figma | ![](assets/icons/fusion360.png){width=32} Fusion 360 |
+| | |
+| ![](assets/icons/jira.png){width=32} Jira | ![](assets/icons/solidworks.png){width=32} SolidWorks |
+| | |
+| ![](assets/icons/msproject.png){width=32} MS Project | ![](assets/icons/catia.png){width=32} Catia |
+| | |
+| ![](assets/icons/photoshop.png){width=32} Photoshop | ![](assets/icons/illustrator.png){width=32} Illustrator |
+| | |
+| ![](assets/icons/inventor.png){width=32} Inventor | ![](assets/icons/siemens-nx.png){width=32} Siemens NX |
+
+---
+
+**[CV'mi PDF olarak indir](assets/Mirac-Beltekin-CV.pdf)**

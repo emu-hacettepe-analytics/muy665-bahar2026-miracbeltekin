@@ -1,9 +1,8 @@
 project:
   type: website
   output-dir: docs
-
 website:
-  title: "[xxxx]'in Analitik Labı"
+  title: "Miraç Beltekin'in Analitik Labı"
   navbar:
     search: true
     left:
@@ -18,16 +17,12 @@ website:
           - text: Ödevler
             href: portfolyo.qmd
           - text: Proje
-            href: project.qmd
-            
+            href: proje.qmd
     tools:
       - icon: github
-        href: https://twitter.com
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/miracbeltekin
       - icon: linkedin
-        href: https://linkedin.com
-
+        href: https://linkedin.com/miracbeltekin
   sidebar:
     - title: "Çalışmalar"
       style: "docked"
@@ -35,9 +30,7 @@ website:
       contents:
         - portfolyo.qmd
         - portfolyo/calisma1.qmd
-        - portfolyo/calisma2.qmd  
-        
-
+        - portfolyo/calisma2.qmd
   page-navigation: true
   back-to-top-navigation: true
   page-footer:
@@ -47,11 +40,9 @@ format:
   html:
     toc: true
     toc-location: left
+    anchor-sections: false
     theme: 
       light: simplex 
       dark: cyborg
     css: styles.css
-
-
 editor: visual
-

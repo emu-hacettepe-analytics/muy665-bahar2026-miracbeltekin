@@ -1,16 +1,78 @@
 ---
-title: "Çalışma 2"
+title: "Ödev 2"
 ---
 
-\
-(Aşağıdakiler örnek olarak verilmiştir.)
+## R Programlama
 
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
-
-## (a)
-
+## 1. Paket ve Veri Yükleme
 ```{r}
-1 + 1
+library(dslabs)
+data("polls_us_election_2016")
 ```
 
-## (b)
+## 2. Değişkenleri Tanımlama
+```{r}
+my_first <- "Mirac"
+my_birth_year <- 1997
+
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+k
+```
+
+## 3. Veri Setinden k Satır Görüntüleme
+```{r}
+if (k %% 2 == 0) {
+  head(polls_us_election_2016, k)
+} else {
+  tail(polls_us_election_2016, k)
+}
+```
+
+## 4. Toplam NA Sayısı
+```{r}
+sum(is.na(polls_us_election_2016))
+```
+
+## 5. Sütun Başına NA Sayısı (İlk 8)
+```{r}
+na_per_column <- sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)
+head(na_per_column, 8)
+```
+
+## 6. NA Değerlerini Değiştirme
+```{r}
+new_data <- polls_us_election_2016
+
+for (col in names(new_data)) {
+  if (is.numeric(new_data[[col]])) {
+    new_data[[col]][is.na(new_data[[col]])] <- my_birth_year + k
+  } else if (is.character(new_data[[col]]) || is.factor(new_data[[col]])) {
+    if (is.factor(new_data[[col]])) {
+      new_data[[col]] <- as.character(new_data[[col]])
+      new_data[[col]][is.na(new_data[[col]])] <- paste0(my_first, "_", k)
+      new_data[[col]] <- as.factor(new_data[[col]])
+    } else {
+      new_data[[col]][is.na(new_data[[col]])] <- paste0(my_first, "_", k)
+    }
+  }
+}
+```
+
+## 7. Yeni Veri Çerçevesinden k Satır
+```{r}
+if (k %% 2 == 0) {
+  head(new_data, k)
+} else {
+  tail(new_data, k)
+}
+```
+
+## 8. Kalan NA Sayısı
+```{r}
+sum(is.na(new_data))
+```
+
+## 9. anyNA Kontrolü
+```{r}
+anyNA(new_data)
+```

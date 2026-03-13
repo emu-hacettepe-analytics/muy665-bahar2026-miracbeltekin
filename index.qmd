@@ -1,5 +1,5 @@
 ---
-title: "Analitik sayfama hoş geldiniz"
+title: "Miraç Beltekin"
 sidebar: false 
 ---
 
