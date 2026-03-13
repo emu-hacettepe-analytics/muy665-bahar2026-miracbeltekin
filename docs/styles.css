@@ -72,3 +72,17 @@ a:hover {
 .navbar .nav-link:focus {
   color: rgba(255,255,255,0.85) !important;
 }
+/* ===== DARK MODE ===== */
+[data-bs-theme="dark"] .navbar .nav-link,
+[data-bs-theme="dark"] .navbar .nav-link.active,
+[data-bs-theme="dark"] .navbar .nav-link:hover {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+[data-bs-theme="dark"] a {
+  color: #5dade2;
+}
+
+[data-bs-theme="dark"] a:hover {
+  color: #85c1e9;
+}
