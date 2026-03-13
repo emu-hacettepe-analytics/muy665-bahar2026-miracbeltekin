@@ -1,6 +1,6 @@
 ---
-
-## Hakkımda
+title: "Hakkımda"
+sidebar: false
 
 ---
 

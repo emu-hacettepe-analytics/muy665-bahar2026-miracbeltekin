@@ -67,186 +67,154 @@
     "href": "portfolyo.html",
     "title": "Portfolyo",
     "section": "",
-    "text": "Bu sayfada, MUY665 İş Analitiği dersi 2025-2026 bahar dönemi boyunca yaptığım analitik çalışmalarımı sunmaktayım. Çalışmalarıma sol menüden ulaşabilirsiniz.\n\n\n\n Back to top",
-    "crumbs": [
-      "Portfolyo"
-    ]
+    "text": "Bu sayfada MUY665 İş Analitiği dersi kapsamında yaptığım ödevleri bulabilirsiniz."
+  },
+  {
+    "objectID": "portfolyo.html#ödevler",
+    "href": "portfolyo.html#ödevler",
+    "title": "Portfolyo",
+    "section": "Ödevler",
+    "text": "Ödevler\nÖdev 1 · Video özeti ve sorular\nÖdev 2 · R programlama ile veri analizi"
   },
   {
     "objectID": "portfolyo/calisma1.html",
     "href": "portfolyo/calisma1.html",
     "title": "Ödev 1",
     "section": "",
-    "text": "Video: Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Kerem Demirtaş & Erdi Daşdemir\nVideo Linki: Videoyu İzle\n\n\nKerem Demirtaş, veri biliminin sadece istatistik veya kodlama değil, problem tanımlama ve alan uzmanlığı gerektiren disiplinler arası bir alan olduğunu vurgulamaktadır. Endüstri mühendisliğindeki modelleme ve yöneylem araştırması mantığı veri biliminin temelini oluşturur; nitekim tipik bir veri bilimi projesi, Endüstri Mühendisliğin’de olduğu gibi net bir problem tanımıyla başlar.\nVeri bilimi süreci; problem tanımı, veri toplama, keşifçi veri analizi, modelleme, değerlendirme ve canlıya alma adımlarından oluşur. Demirtaş, otonom araçların konvoy oluşturması (platooning) üzerine yaptığı doktora çalışmasıyla, araçların birbiriyle haberleşerek trafik akışını nasıl optimize edebileceğini ve “dur-kalk” dalgalanmalarını nasıl azaltabileceğini örneklemektedir.\nKariyer gelişimi için Python dilini çok iyi öğrenmek ve programlama becerilerini güçlendirmek kritik bir tavsiyedir. Lisansüstü eğitim kararı akademik hedeflere veya sektöre göre verilmelidir; zira Türkiye şartlarında yüksek lisans her zaman doğrudan maaş artışı sağlamayabilir ancak yurt dışı hedefleri için değerlidir.",
-    "crumbs": [
-      "Ödev 1"
-    ]
+    "text": "Video: Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Kerem Demirtaş & Erdi Daşdemir\nVideo Linki: Videoyu İzle\n\n\nKerem Demirtaş, veri biliminin sadece istatistik veya kodlama değil, problem tanımlama ve alan uzmanlığı gerektiren disiplinler arası bir alan olduğunu vurgulamaktadır. Endüstri mühendisliğindeki modelleme ve yöneylem araştırması mantığı veri biliminin temelini oluşturur; nitekim tipik bir veri bilimi projesi, Endüstri Mühendisliğin’de olduğu gibi net bir problem tanımıyla başlar.\nVeri bilimi süreci; problem tanımı, veri toplama, keşifçi veri analizi, modelleme, değerlendirme ve canlıya alma adımlarından oluşur. Demirtaş, otonom araçların konvoy oluşturması (platooning) üzerine yaptığı doktora çalışmasıyla, araçların birbiriyle haberleşerek trafik akışını nasıl optimize edebileceğini ve “dur-kalk” dalgalanmalarını nasıl azaltabileceğini örneklemektedir.\nKariyer gelişimi için Python dilini çok iyi öğrenmek ve programlama becerilerini güçlendirmek kritik bir tavsiyedir. Lisansüstü eğitim kararı akademik hedeflere veya sektöre göre verilmelidir; zira Türkiye şartlarında yüksek lisans her zaman doğrudan maaş artışı sağlamayabilir ancak yurt dışı hedefleri için değerlidir."
   },
   {
     "objectID": "portfolyo/calisma1.html#video-özeti",
     "href": "portfolyo/calisma1.html#video-özeti",
     "title": "Ödev 1",
     "section": "",
-    "text": "Video: Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Kerem Demirtaş & Erdi Daşdemir\nVideo Linki: Videoyu İzle\n\n\nKerem Demirtaş, veri biliminin sadece istatistik veya kodlama değil, problem tanımlama ve alan uzmanlığı gerektiren disiplinler arası bir alan olduğunu vurgulamaktadır. Endüstri mühendisliğindeki modelleme ve yöneylem araştırması mantığı veri biliminin temelini oluşturur; nitekim tipik bir veri bilimi projesi, Endüstri Mühendisliğin’de olduğu gibi net bir problem tanımıyla başlar.\nVeri bilimi süreci; problem tanımı, veri toplama, keşifçi veri analizi, modelleme, değerlendirme ve canlıya alma adımlarından oluşur. Demirtaş, otonom araçların konvoy oluşturması (platooning) üzerine yaptığı doktora çalışmasıyla, araçların birbiriyle haberleşerek trafik akışını nasıl optimize edebileceğini ve “dur-kalk” dalgalanmalarını nasıl azaltabileceğini örneklemektedir.\nKariyer gelişimi için Python dilini çok iyi öğrenmek ve programlama becerilerini güçlendirmek kritik bir tavsiyedir. Lisansüstü eğitim kararı akademik hedeflere veya sektöre göre verilmelidir; zira Türkiye şartlarında yüksek lisans her zaman doğrudan maaş artışı sağlamayabilir ancak yurt dışı hedefleri için değerlidir.",
-    "crumbs": [
-      "Ödev 1"
-    ]
+    "text": "Video: Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Kerem Demirtaş & Erdi Daşdemir\nVideo Linki: Videoyu İzle\n\n\nKerem Demirtaş, veri biliminin sadece istatistik veya kodlama değil, problem tanımlama ve alan uzmanlığı gerektiren disiplinler arası bir alan olduğunu vurgulamaktadır. Endüstri mühendisliğindeki modelleme ve yöneylem araştırması mantığı veri biliminin temelini oluşturur; nitekim tipik bir veri bilimi projesi, Endüstri Mühendisliğin’de olduğu gibi net bir problem tanımıyla başlar.\nVeri bilimi süreci; problem tanımı, veri toplama, keşifçi veri analizi, modelleme, değerlendirme ve canlıya alma adımlarından oluşur. Demirtaş, otonom araçların konvoy oluşturması (platooning) üzerine yaptığı doktora çalışmasıyla, araçların birbiriyle haberleşerek trafik akışını nasıl optimize edebileceğini ve “dur-kalk” dalgalanmalarını nasıl azaltabileceğini örneklemektedir.\nKariyer gelişimi için Python dilini çok iyi öğrenmek ve programlama becerilerini güçlendirmek kritik bir tavsiyedir. Lisansüstü eğitim kararı akademik hedeflere veya sektöre göre verilmelidir; zira Türkiye şartlarında yüksek lisans her zaman doğrudan maaş artışı sağlamayabilir ancak yurt dışı hedefleri için değerlidir."
   },
   {
     "objectID": "portfolyo/calisma1.html#sorular",
     "href": "portfolyo/calisma1.html#sorular",
     "title": "Ödev 1",
     "section": "Sorular",
-    "text": "Sorular\n\nAçık Uçlu Soru\nSoru: Veri biliminde “alan uzmanlığı” (domain knowledge) neden vazgeçilmezdir?\nCevap: Sadece teknik modelleme bilgisiyle gerçekçi sonuçlar üretilemez; veriyi doğru şekilde işlemek, doğru soruları sormak ve çıkan sonuçları iş hedefleriyle uyumlu şekilde yorumlayabilmek için ilgili sektörü veya problemi derinlemesine tanımak gerekir.\n\n\n\nÇoktan Seçmeli Soru\nSoru: Kerem Demirtaş, endüstri mühendislerinin piyasadaki değerini artırmak ve “programlama kaslarını” güçlendirmek için hangi programlama dilini öğrenmelerini özellikle tavsiye etmektedir?\n\nJava\nC++\nPython\nSQL\n\nDoğru Cevap: C\nAçıklama: Demirtaş, Python’un hem öğrenilmesinin kolay olması hem de nesne yönelimli ve fonksiyonel paradigmaları desteklemesi sayesinde veri biliminin her aşamasında (veri hazırlama, modelleme vb.) kullanılabileceğini belirterek bu dili şiddetle tavsiye etmektedir",
-    "crumbs": [
-      "Ödev 1"
-    ]
-  },
-  {
-    "objectID": "about.html#hakkımda",
-    "href": "about.html#hakkımda",
-    "title": "Miraç Beltekin'in Analitik Labı",
-    "section": "Hakkımda",
-    "text": "Hakkımda"
+    "text": "Sorular\n\nAçık Uçlu Soru\nSoru: Veri biliminde “alan uzmanlığı” (domain knowledge) neden vazgeçilmezdir?\nCevap: Sadece teknik modelleme bilgisiyle gerçekçi sonuçlar üretilemez; veriyi doğru şekilde işlemek, doğru soruları sormak ve çıkan sonuçları iş hedefleriyle uyumlu şekilde yorumlayabilmek için ilgili sektörü veya problemi derinlemesine tanımak gerekir.\n\n\n\nÇoktan Seçmeli Soru\nSoru: Kerem Demirtaş, endüstri mühendislerinin piyasadaki değerini artırmak ve “programlama kaslarını” güçlendirmek için hangi programlama dilini öğrenmelerini özellikle tavsiye etmektedir?\n\nJava\nC++\nPython\nSQL\n\nDoğru Cevap: C\nAçıklama: Demirtaş, Python’un hem öğrenilmesinin kolay olması hem de nesne yönelimli ve fonksiyonel paradigmaları desteklemesi sayesinde veri biliminin her aşamasında (veri hazırlama, modelleme vb.) kullanılabileceğini belirterek bu dili şiddetle tavsiye etmektedir"
   },
   {
     "objectID": "about.html#miraç-beltekin",
     "href": "about.html#miraç-beltekin",
-    "title": "Miraç Beltekin'in Analitik Labı",
+    "title": "Hakkımda",
     "section": "Miraç Beltekin",
     "text": "Miraç Beltekin\nProje Mühendisi\nİletişim: mirac.beltekin@gmail.com · Ankara, Türkiye"
   },
   {
     "objectID": "about.html#eğitim",
     "href": "about.html#eğitim",
-    "title": "Miraç Beltekin'in Analitik Labı",
+    "title": "Hakkımda",
     "section": "Eğitim",
     "text": "Eğitim\nHacettepe Üniversitesi\n2026 - Devam Ediyor\nMühendislik Yönetimi, Yüksek Lisans\nGazi Üniversitesi\n2016 - 2021\nEndüstriyel Tasarım Mühendisliği, Lisans"
   },
   {
     "objectID": "about.html#deneyim",
     "href": "about.html#deneyim",
-    "title": "Miraç Beltekin'in Analitik Labı",
+    "title": "Hakkımda",
     "section": "Deneyim",
     "text": "Deneyim\nTripy Mobility Teknoloji A.Ş.\nEkim 2022 - Devam Ediyor\nProje Mühendisi\nMİA Teknoloji A.Ş.\nHaziran 2020 - Ekim 2022\nEndüstriyel Tasarım Mühendisi\nMFK Makina\nTemmuz 2019\nStajyer Mühendis\nÖzben Savunma\nTemmuz 2018\nStajyer Mühendis"
   },
   {
     "objectID": "about.html#sertifikalar",
     "href": "about.html#sertifikalar",
-    "title": "Miraç Beltekin'in Analitik Labı",
+    "title": "Hakkımda",
     "section": "Sertifikalar",
     "text": "Sertifikalar\n\nPMI Onaylı PMP® Sertifikası Eğitimi\nGoogle UX Design Sertifikası\nGoogle AI Essentials Sertifikası\nİHA-2 Pilotluk Lisansı\nAS 9100: Havacılık/Savunma Standartları\nIATF 16949: Otomotiv Kalite Standartları"
   },
   {
     "objectID": "about.html#yetkinlikler",
     "href": "about.html#yetkinlikler",
-    "title": "Miraç Beltekin'in Analitik Labı",
+    "title": "Hakkımda",
     "section": "Yetkinlikler",
     "text": "Yetkinlikler\n\nUçtan Uca Ürün Yönetimi\nKapsam, Değişim ve Risk Yönetimi\nZaman ve Maliyet Planlaması\nÜrün Geliştirme ve Üretim Takibi\nÇevik ve Hibrit Proje Yönetimi\nSaha Operasyonu ve Test Süreçleri\nPaydaş Katılımı ve İletişim Yönetimi"
   },
   {
     "objectID": "about.html#program-bilgisi",
     "href": "about.html#program-bilgisi",
-    "title": "Miraç Beltekin'in Analitik Labı",
+    "title": "Hakkımda",
     "section": "Program Bilgisi",
     "text": "Program Bilgisi\n\n\n\n\n\n\n\n Microsoft Office\n AutoCAD\n\n\n\n\n\n\n Figma\n Fusion 360\n\n\n\n\n\n\n Jira\n SolidWorks\n\n\n\n\n\n\n MS Project\n Catia\n\n\n\n\n\n\n Photoshop\n Illustrator\n\n\n\n\n\n\n Inventor\n Siemens NX\n\n\n\n\nCV’mi PDF olarak indir"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Miraç Beltekin",
+    "title": "Merhaba Analtik Sayfama Hoş Geldiniz",
     "section": "",
-    "text": "MUY660-İş Analitiği dersi sayfama hoş geldiniz.\nBu analitik çalışmalarımızı paylaşıyorum.\n\n\n\n Back to top"
+    "text": "Ben Miraç Beltekin. Hacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans öğrencisiyim.\nBu web sitesinde MUY665 - İş Analitiği dersi kapsamındaki çalışmalarımı paylaşıyorum.\n\n\n\nE-posta: mirac.beltekin@gmail.com\nGitHub: github.com/miracbeltekin\nLinkedIn: linkedin.com/in/miracbeltekin"
+  },
+  {
+    "objectID": "index.html#başlangıç",
+    "href": "index.html#başlangıç",
+    "title": "Merhaba Analtik Sayfama Hoş Geldiniz",
+    "section": "",
+    "text": "Ben Miraç Beltekin. Hacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans öğrencisiyim.\nBu web sitesinde MUY665 - İş Analitiği dersi kapsamındaki çalışmalarımı paylaşıyorum.\n\n\n\nE-posta: mirac.beltekin@gmail.com\nGitHub: github.com/miracbeltekin\nLinkedIn: linkedin.com/in/miracbeltekin"
   },
   {
     "objectID": "portfolyo/calisma2.html#paket-ve-veri-yükleme",
     "href": "portfolyo/calisma2.html#paket-ve-veri-yükleme",
     "title": "Ödev 2",
     "section": "1. Paket ve Veri Yükleme",
-    "text": "1. Paket ve Veri Yükleme\n\nlibrary(dslabs)\ndata(\"polls_us_election_2016\")",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "1. Paket ve Veri Yükleme\n\nlibrary(dslabs)\ndata(\"polls_us_election_2016\")"
   },
   {
     "objectID": "portfolyo/calisma2.html#değişkenleri-tanımlama",
     "href": "portfolyo/calisma2.html#değişkenleri-tanımlama",
     "title": "Ödev 2",
     "section": "2. Değişkenleri Tanımlama",
-    "text": "2. Değişkenleri Tanımlama\n\nmy_first &lt;- \"Mirac\"\nmy_birth_year &lt;- 1997\n\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\nk\n\n[1] 15",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "2. Değişkenleri Tanımlama\n\nmy_first &lt;- \"Mirac\"\nmy_birth_year &lt;- 1997\n\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\nk\n\n[1] 15"
   },
   {
     "objectID": "portfolyo/calisma2.html#veri-setinden-k-satır-görüntüleme",
     "href": "portfolyo/calisma2.html#veri-setinden-k-satır-görüntüleme",
     "title": "Ödev 2",
     "section": "3. Veri Setinden k Satır Görüntüleme",
-    "text": "3. Veri Setinden k Satır Görüntüleme\n\nif (k %% 2 == 0) {\n  head(polls_us_election_2016, k)\n} else {\n  tail(polls_us_election_2016, k)\n}\n\n              state  startdate    enddate                pollster grade\n4194 North Carolina 2016-09-27 2016-10-02   Quinnipiac University    A-\n4195 North Carolina 2016-02-14 2016-02-16               SurveyUSA     A\n4196 North Carolina 2016-05-20 2016-05-22   Public Policy Polling    B+\n4197       Kentucky 2016-09-30 2016-10-13                   Ipsos    A-\n4198        Florida 2016-07-30 2016-08-07   Quinnipiac University    A-\n4199   Pennsylvania 2016-06-08 2016-06-19   Quinnipiac University    A-\n4200           Ohio 2016-06-30 2016-07-11   Quinnipiac University    A-\n4201 North Carolina 2016-03-18 2016-03-20   Public Policy Polling    B+\n4202   South Dakota 2016-10-28 2016-11-02                   Ipsos    A-\n4203     Washington 2016-10-21 2016-11-02                   Ipsos    A-\n4204       Virginia 2016-09-16 2016-09-22                   Ipsos    A-\n4205      Wisconsin 2016-08-04 2016-08-07    Marquette University     A\n4206           Utah 2016-11-01 2016-11-07 Google Consumer Surveys     B\n4207         Oregon 2016-10-21 2016-11-02                   Ipsos    A-\n4208       Michigan 2016-01-23 2016-01-26                EPIC-MRA    A-\n     samplesize population rawpoll_clinton rawpoll_trump rawpoll_johnson\n4194        507         lv           46.00         43.00            7.00\n4195       1250         lv           43.00         45.00              NA\n4196        928          v           41.00         43.00            3.00\n4197        336         lv           39.38         53.08              NA\n4198       1056         lv           43.00         43.00            7.00\n4199        950         rv           39.00         36.00            9.00\n4200        955         rv           36.00         37.00            7.00\n4201        843          v           44.00         42.00              NA\n4202        170         lv           28.45         47.20              NA\n4203        538         lv           46.71         38.33              NA\n4204        452         lv           46.54         40.04              NA\n4205        683         lv           47.00         34.00            9.00\n4206        286         lv           21.33         35.05            9.99\n4207        446         lv           46.46         37.41              NA\n4208        600         lv           43.00         41.00              NA\n     rawpoll_mcmullin adjpoll_clinton adjpoll_trump adjpoll_johnson\n4194               NA        47.79437      44.86935        4.022323\n4195               NA        39.90517      44.40152              NA\n4196               NA        43.28262      47.12021       -0.036293\n4197               NA        38.34430      54.36357              NA\n4198               NA        45.19351      46.65680        3.448447\n4199               NA        43.35339      41.19061        4.791570\n4200               NA        40.73937      42.33380        2.936299\n4201               NA        42.13165      43.55006              NA\n4202               NA        26.57791      45.43384              NA\n4203               NA        45.56387      38.22545              NA\n4204               NA        46.47852      40.48017              NA\n4205               NA        48.74781      39.07778        4.705020\n4206               NA        26.65200      40.57738        9.705791\n4207               NA        45.12949      37.10720              NA\n4208               NA        42.14966      42.05508              NA\n     adjpoll_mcmullin\n4194               NA\n4195               NA\n4196               NA\n4197               NA\n4198               NA\n4199               NA\n4200               NA\n4201               NA\n4202               NA\n4203               NA\n4204               NA\n4205               NA\n4206               NA\n4207               NA\n4208               NA",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "3. Veri Setinden k Satır Görüntüleme\n\nif (k %% 2 == 0) {\n  head(polls_us_election_2016, k)\n} else {\n  tail(polls_us_election_2016, k)\n}\n\n              state  startdate    enddate                pollster grade\n4194 North Carolina 2016-09-27 2016-10-02   Quinnipiac University    A-\n4195 North Carolina 2016-02-14 2016-02-16               SurveyUSA     A\n4196 North Carolina 2016-05-20 2016-05-22   Public Policy Polling    B+\n4197       Kentucky 2016-09-30 2016-10-13                   Ipsos    A-\n4198        Florida 2016-07-30 2016-08-07   Quinnipiac University    A-\n4199   Pennsylvania 2016-06-08 2016-06-19   Quinnipiac University    A-\n4200           Ohio 2016-06-30 2016-07-11   Quinnipiac University    A-\n4201 North Carolina 2016-03-18 2016-03-20   Public Policy Polling    B+\n4202   South Dakota 2016-10-28 2016-11-02                   Ipsos    A-\n4203     Washington 2016-10-21 2016-11-02                   Ipsos    A-\n4204       Virginia 2016-09-16 2016-09-22                   Ipsos    A-\n4205      Wisconsin 2016-08-04 2016-08-07    Marquette University     A\n4206           Utah 2016-11-01 2016-11-07 Google Consumer Surveys     B\n4207         Oregon 2016-10-21 2016-11-02                   Ipsos    A-\n4208       Michigan 2016-01-23 2016-01-26                EPIC-MRA    A-\n     samplesize population rawpoll_clinton rawpoll_trump rawpoll_johnson\n4194        507         lv           46.00         43.00            7.00\n4195       1250         lv           43.00         45.00              NA\n4196        928          v           41.00         43.00            3.00\n4197        336         lv           39.38         53.08              NA\n4198       1056         lv           43.00         43.00            7.00\n4199        950         rv           39.00         36.00            9.00\n4200        955         rv           36.00         37.00            7.00\n4201        843          v           44.00         42.00              NA\n4202        170         lv           28.45         47.20              NA\n4203        538         lv           46.71         38.33              NA\n4204        452         lv           46.54         40.04              NA\n4205        683         lv           47.00         34.00            9.00\n4206        286         lv           21.33         35.05            9.99\n4207        446         lv           46.46         37.41              NA\n4208        600         lv           43.00         41.00              NA\n     rawpoll_mcmullin adjpoll_clinton adjpoll_trump adjpoll_johnson\n4194               NA        47.79437      44.86935        4.022323\n4195               NA        39.90517      44.40152              NA\n4196               NA        43.28262      47.12021       -0.036293\n4197               NA        38.34430      54.36357              NA\n4198               NA        45.19351      46.65680        3.448447\n4199               NA        43.35339      41.19061        4.791570\n4200               NA        40.73937      42.33380        2.936299\n4201               NA        42.13165      43.55006              NA\n4202               NA        26.57791      45.43384              NA\n4203               NA        45.56387      38.22545              NA\n4204               NA        46.47852      40.48017              NA\n4205               NA        48.74781      39.07778        4.705020\n4206               NA        26.65200      40.57738        9.705791\n4207               NA        45.12949      37.10720              NA\n4208               NA        42.14966      42.05508              NA\n     adjpoll_mcmullin\n4194               NA\n4195               NA\n4196               NA\n4197               NA\n4198               NA\n4199               NA\n4200               NA\n4201               NA\n4202               NA\n4203               NA\n4204               NA\n4205               NA\n4206               NA\n4207               NA\n4208               NA"
   },
   {
     "objectID": "portfolyo/calisma2.html#toplam-na-sayısı",
     "href": "portfolyo/calisma2.html#toplam-na-sayısı",
     "title": "Ödev 2",
     "section": "4. Toplam NA Sayısı",
-    "text": "4. Toplam NA Sayısı\n\nsum(is.na(polls_us_election_2016))\n\n[1] 11604",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "4. Toplam NA Sayısı\n\nsum(is.na(polls_us_election_2016))\n\n[1] 11604"
   },
   {
     "objectID": "portfolyo/calisma2.html#sütun-başına-na-sayısı-ilk-8",
     "href": "portfolyo/calisma2.html#sütun-başına-na-sayısı-ilk-8",
     "title": "Ödev 2",
     "section": "5. Sütun Başına NA Sayısı (İlk 8)",
-    "text": "5. Sütun Başına NA Sayısı (İlk 8)\n\nna_per_column &lt;- sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)\nhead(na_per_column, 8)\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "5. Sütun Başına NA Sayısı (İlk 8)\n\nna_per_column &lt;- sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)\nhead(na_per_column, 8)\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0"
   },
   {
     "objectID": "portfolyo/calisma2.html#na-değerlerini-değiştirme",
     "href": "portfolyo/calisma2.html#na-değerlerini-değiştirme",
     "title": "Ödev 2",
     "section": "6. NA Değerlerini Değiştirme",
-    "text": "6. NA Değerlerini Değiştirme\n\nnew_data &lt;- polls_us_election_2016\n\nfor (col in names(new_data)) {\n  if (is.numeric(new_data[[col]])) {\n    new_data[[col]][is.na(new_data[[col]])] &lt;- my_birth_year + k\n  } else if (is.character(new_data[[col]]) || is.factor(new_data[[col]])) {\n    if (is.factor(new_data[[col]])) {\n      new_data[[col]] &lt;- as.character(new_data[[col]])\n      new_data[[col]][is.na(new_data[[col]])] &lt;- paste0(my_first, \"_\", k)\n      new_data[[col]] &lt;- as.factor(new_data[[col]])\n    } else {\n      new_data[[col]][is.na(new_data[[col]])] &lt;- paste0(my_first, \"_\", k)\n    }\n  }\n}",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "6. NA Değerlerini Değiştirme\n\nnew_data &lt;- polls_us_election_2016\n\nfor (col in names(new_data)) {\n  if (is.numeric(new_data[[col]])) {\n    new_data[[col]][is.na(new_data[[col]])] &lt;- my_birth_year + k\n  } else if (is.character(new_data[[col]]) || is.factor(new_data[[col]])) {\n    if (is.factor(new_data[[col]])) {\n      new_data[[col]] &lt;- as.character(new_data[[col]])\n      new_data[[col]][is.na(new_data[[col]])] &lt;- paste0(my_first, \"_\", k)\n      new_data[[col]] &lt;- as.factor(new_data[[col]])\n    } else {\n      new_data[[col]][is.na(new_data[[col]])] &lt;- paste0(my_first, \"_\", k)\n    }\n  }\n}"
   },
   {
     "objectID": "portfolyo/calisma2.html#yeni-veri-çerçevesinden-k-satır",
     "href": "portfolyo/calisma2.html#yeni-veri-çerçevesinden-k-satır",
     "title": "Ödev 2",
     "section": "7. Yeni Veri Çerçevesinden k Satır",
-    "text": "7. Yeni Veri Çerçevesinden k Satır\n\nif (k %% 2 == 0) {\n  head(new_data, k)\n} else {\n  tail(new_data, k)\n}\n\n              state  startdate    enddate                pollster grade\n4194 North Carolina 2016-09-27 2016-10-02   Quinnipiac University    A-\n4195 North Carolina 2016-02-14 2016-02-16               SurveyUSA     A\n4196 North Carolina 2016-05-20 2016-05-22   Public Policy Polling    B+\n4197       Kentucky 2016-09-30 2016-10-13                   Ipsos    A-\n4198        Florida 2016-07-30 2016-08-07   Quinnipiac University    A-\n4199   Pennsylvania 2016-06-08 2016-06-19   Quinnipiac University    A-\n4200           Ohio 2016-06-30 2016-07-11   Quinnipiac University    A-\n4201 North Carolina 2016-03-18 2016-03-20   Public Policy Polling    B+\n4202   South Dakota 2016-10-28 2016-11-02                   Ipsos    A-\n4203     Washington 2016-10-21 2016-11-02                   Ipsos    A-\n4204       Virginia 2016-09-16 2016-09-22                   Ipsos    A-\n4205      Wisconsin 2016-08-04 2016-08-07    Marquette University     A\n4206           Utah 2016-11-01 2016-11-07 Google Consumer Surveys     B\n4207         Oregon 2016-10-21 2016-11-02                   Ipsos    A-\n4208       Michigan 2016-01-23 2016-01-26                EPIC-MRA    A-\n     samplesize population rawpoll_clinton rawpoll_trump rawpoll_johnson\n4194        507         lv           46.00         43.00            7.00\n4195       1250         lv           43.00         45.00         2012.00\n4196        928          v           41.00         43.00            3.00\n4197        336         lv           39.38         53.08         2012.00\n4198       1056         lv           43.00         43.00            7.00\n4199        950         rv           39.00         36.00            9.00\n4200        955         rv           36.00         37.00            7.00\n4201        843          v           44.00         42.00         2012.00\n4202        170         lv           28.45         47.20         2012.00\n4203        538         lv           46.71         38.33         2012.00\n4204        452         lv           46.54         40.04         2012.00\n4205        683         lv           47.00         34.00            9.00\n4206        286         lv           21.33         35.05            9.99\n4207        446         lv           46.46         37.41         2012.00\n4208        600         lv           43.00         41.00         2012.00\n     rawpoll_mcmullin adjpoll_clinton adjpoll_trump adjpoll_johnson\n4194             2012        47.79437      44.86935        4.022323\n4195             2012        39.90517      44.40152     2012.000000\n4196             2012        43.28262      47.12021       -0.036293\n4197             2012        38.34430      54.36357     2012.000000\n4198             2012        45.19351      46.65680        3.448447\n4199             2012        43.35339      41.19061        4.791570\n4200             2012        40.73937      42.33380        2.936299\n4201             2012        42.13165      43.55006     2012.000000\n4202             2012        26.57791      45.43384     2012.000000\n4203             2012        45.56387      38.22545     2012.000000\n4204             2012        46.47852      40.48017     2012.000000\n4205             2012        48.74781      39.07778        4.705020\n4206             2012        26.65200      40.57738        9.705791\n4207             2012        45.12949      37.10720     2012.000000\n4208             2012        42.14966      42.05508     2012.000000\n     adjpoll_mcmullin\n4194             2012\n4195             2012\n4196             2012\n4197             2012\n4198             2012\n4199             2012\n4200             2012\n4201             2012\n4202             2012\n4203             2012\n4204             2012\n4205             2012\n4206             2012\n4207             2012\n4208             2012",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "7. Yeni Veri Çerçevesinden k Satır\n\nif (k %% 2 == 0) {\n  head(new_data, k)\n} else {\n  tail(new_data, k)\n}\n\n              state  startdate    enddate                pollster grade\n4194 North Carolina 2016-09-27 2016-10-02   Quinnipiac University    A-\n4195 North Carolina 2016-02-14 2016-02-16               SurveyUSA     A\n4196 North Carolina 2016-05-20 2016-05-22   Public Policy Polling    B+\n4197       Kentucky 2016-09-30 2016-10-13                   Ipsos    A-\n4198        Florida 2016-07-30 2016-08-07   Quinnipiac University    A-\n4199   Pennsylvania 2016-06-08 2016-06-19   Quinnipiac University    A-\n4200           Ohio 2016-06-30 2016-07-11   Quinnipiac University    A-\n4201 North Carolina 2016-03-18 2016-03-20   Public Policy Polling    B+\n4202   South Dakota 2016-10-28 2016-11-02                   Ipsos    A-\n4203     Washington 2016-10-21 2016-11-02                   Ipsos    A-\n4204       Virginia 2016-09-16 2016-09-22                   Ipsos    A-\n4205      Wisconsin 2016-08-04 2016-08-07    Marquette University     A\n4206           Utah 2016-11-01 2016-11-07 Google Consumer Surveys     B\n4207         Oregon 2016-10-21 2016-11-02                   Ipsos    A-\n4208       Michigan 2016-01-23 2016-01-26                EPIC-MRA    A-\n     samplesize population rawpoll_clinton rawpoll_trump rawpoll_johnson\n4194        507         lv           46.00         43.00            7.00\n4195       1250         lv           43.00         45.00         2012.00\n4196        928          v           41.00         43.00            3.00\n4197        336         lv           39.38         53.08         2012.00\n4198       1056         lv           43.00         43.00            7.00\n4199        950         rv           39.00         36.00            9.00\n4200        955         rv           36.00         37.00            7.00\n4201        843          v           44.00         42.00         2012.00\n4202        170         lv           28.45         47.20         2012.00\n4203        538         lv           46.71         38.33         2012.00\n4204        452         lv           46.54         40.04         2012.00\n4205        683         lv           47.00         34.00            9.00\n4206        286         lv           21.33         35.05            9.99\n4207        446         lv           46.46         37.41         2012.00\n4208        600         lv           43.00         41.00         2012.00\n     rawpoll_mcmullin adjpoll_clinton adjpoll_trump adjpoll_johnson\n4194             2012        47.79437      44.86935        4.022323\n4195             2012        39.90517      44.40152     2012.000000\n4196             2012        43.28262      47.12021       -0.036293\n4197             2012        38.34430      54.36357     2012.000000\n4198             2012        45.19351      46.65680        3.448447\n4199             2012        43.35339      41.19061        4.791570\n4200             2012        40.73937      42.33380        2.936299\n4201             2012        42.13165      43.55006     2012.000000\n4202             2012        26.57791      45.43384     2012.000000\n4203             2012        45.56387      38.22545     2012.000000\n4204             2012        46.47852      40.48017     2012.000000\n4205             2012        48.74781      39.07778        4.705020\n4206             2012        26.65200      40.57738        9.705791\n4207             2012        45.12949      37.10720     2012.000000\n4208             2012        42.14966      42.05508     2012.000000\n     adjpoll_mcmullin\n4194             2012\n4195             2012\n4196             2012\n4197             2012\n4198             2012\n4199             2012\n4200             2012\n4201             2012\n4202             2012\n4203             2012\n4204             2012\n4205             2012\n4206             2012\n4207             2012\n4208             2012"
   },
   {
     "objectID": "portfolyo/calisma2.html#kalan-na-sayısı",
     "href": "portfolyo/calisma2.html#kalan-na-sayısı",
     "title": "Ödev 2",
     "section": "8. Kalan NA Sayısı",
-    "text": "8. Kalan NA Sayısı\n\nsum(is.na(new_data))\n\n[1] 0",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "8. Kalan NA Sayısı\n\nsum(is.na(new_data))\n\n[1] 0"
   },
   {
     "objectID": "portfolyo/calisma2.html#anyna-kontrolü",
     "href": "portfolyo/calisma2.html#anyna-kontrolü",
     "title": "Ödev 2",
     "section": "9. anyNA Kontrolü",
-    "text": "9. anyNA Kontrolü\n\nanyNA(new_data)\n\n[1] FALSE",
-    "crumbs": [
-      "Ödev 2"
-    ]
+    "text": "9. anyNA Kontrolü\n\nanyNA(new_data)\n\n[1] FALSE"
   },
   {
     "objectID": "posts.html",

@@ -1,8 +1,16 @@
 ---
-title: "Miraç Beltekin"
-sidebar: false 
+title: "Merhaba Analtik Sayfama Hoş Geldiniz"
+sidebar: false
 ---
 
-MUY660-İş Analitiği dersi sayfama hoş geldiniz.
+## Başlangıç!
 
-Bu analitik çalışmalarımızı paylaşıyorum.
+Ben **Miraç Beltekin**. Hacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans öğrencisiyim.
+
+Bu web sitesinde MUY665 - İş Analitiği dersi kapsamındaki çalışmalarımı paylaşıyorum.
+
+### İletişim
+
+- **E-posta:** mirac.beltekin@gmail.com
+- **GitHub:** [github.com/miracbeltekin](https://github.com/miracbeltekin)
+- **LinkedIn:** [linkedin.com/in/miracbeltekin](https://www.linkedin.com/in/miracbeltekin)
