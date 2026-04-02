@@ -4,10 +4,10 @@ title: "Portfolyo"
 
 Bu sayfada MUY665 İş Analitiği dersi kapsamında yaptığım ödevleri bulabilirsiniz.
 
----
+------------------------------------------------------------------------
 
 ## Ödevler
 
-**[Ödev 1](portfolyo/calisma1.qmd)** · Video özeti ve sorular
+[**Ödev 1**](portfolyo/calisma1.qmd) · Video özeti ve sorular
 
-**[Ödev 2](portfolyo/calisma2.qmd)** · R programlama ile veri analizi
+[**Ödev 2**](portfolyo/calisma2.qmd) · R programlama ile veri analizi

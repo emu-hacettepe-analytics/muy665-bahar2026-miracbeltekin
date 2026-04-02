@@ -11,6 +11,6 @@ Bu web sitesinde MUY665 - İş Analitiği dersi kapsamındaki çalışmalarımı
 
 ### İletişim
 
-- **E-posta:** mirac.beltekin@gmail.com
-- **GitHub:** [github.com/miracbeltekin](https://github.com/miracbeltekin)
-- **LinkedIn:** [linkedin.com/in/miracbeltekin](https://www.linkedin.com/in/miracbeltekin)
+-   **E-posta:** mirac.beltekin\@gmail.com
+-   **GitHub:** [github.com/miracbeltekin](https://github.com/miracbeltekin)
+-   **LinkedIn:** [linkedin.com/in/miracbeltekin](https://www.linkedin.com/in/miracbeltekin)

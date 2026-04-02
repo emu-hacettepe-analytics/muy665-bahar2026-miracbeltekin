@@ -1,113 +1,108 @@
 ---
 title: "Hakkımda"
 sidebar: false
-
 ---
 
-![](assets/foto.jpg){width=150}
+![](assets/foto.jpg){width="150"}
 
 ## Miraç Beltekin
 
 **Proje Mühendisi**
 
-**İletişim:** mirac.beltekin@gmail.com · Ankara, Türkiye
+**İletişim:** mirac.beltekin\@gmail.com · Ankara, Türkiye
 
----
+------------------------------------------------------------------------
 
 ## Eğitim
 
-**Hacettepe Üniversitesi**  
+**Hacettepe Üniversitesi**
 
-*2026 - Devam Ediyor*  
+*2026 - Devam Ediyor*
 
 Mühendislik Yönetimi, Yüksek Lisans
 
-**Gazi Üniversitesi**  
+**Gazi Üniversitesi**
 
-*2016 - 2021*  
+*2016 - 2021*
 
 Endüstriyel Tasarım Mühendisliği, Lisans
 
----
+------------------------------------------------------------------------
 
 ## Deneyim
 
-**Tripy Mobility Teknoloji A.Ş.**  
+**Tripy Mobility Teknoloji A.Ş.**
 
-*Ekim 2022 - Devam Ediyor*  
+*Ekim 2022 - Devam Ediyor*
 
 Proje Mühendisi
 
-**MİA Teknoloji A.Ş.**  
+**MİA Teknoloji A.Ş.**
 
-*Haziran 2020 - Ekim 2022*  
+*Haziran 2020 - Ekim 2022*
 
 Endüstriyel Tasarım Mühendisi
 
-**MFK Makina**  
+**MFK Makina**
 
-*Temmuz 2019*  
-
-Stajyer Mühendis
-
-**Özben Savunma**  
-
-*Temmuz 2018*  
+*Temmuz 2019*
 
 Stajyer Mühendis
 
----
+**Özben Savunma**
+
+*Temmuz 2018*
+
+Stajyer Mühendis
+
+------------------------------------------------------------------------
 
 ## Sertifikalar
 
-- PMI Onaylı PMP® Sertifikası Eğitimi
+-   PMI Onaylı PMP® Sertifikası Eğitimi
 
-- Google UX Design Sertifikası
+-   Google UX Design Sertifikası
 
-- Google AI Essentials Sertifikası
+-   Google AI Essentials Sertifikası
 
-- İHA-2 Pilotluk Lisansı
+-   İHA-2 Pilotluk Lisansı
 
-- AS 9100: Havacılık/Savunma Standartları
+-   AS 9100: Havacılık/Savunma Standartları
 
-- IATF 16949: Otomotiv Kalite Standartları
+-   IATF 16949: Otomotiv Kalite Standartları
 
----
+------------------------------------------------------------------------
 
 ## Yetkinlikler
 
-- Uçtan Uca Ürün Yönetimi
+-   Uçtan Uca Ürün Yönetimi
 
-- Kapsam, Değişim ve Risk Yönetimi
+-   Kapsam, Değişim ve Risk Yönetimi
 
-- Zaman ve Maliyet Planlaması
+-   Zaman ve Maliyet Planlaması
 
-- Ürün Geliştirme ve Üretim Takibi
+-   Ürün Geliştirme ve Üretim Takibi
 
-- Çevik ve Hibrit Proje Yönetimi
+-   Çevik ve Hibrit Proje Yönetimi
 
-- Saha Operasyonu ve Test Süreçleri
+-   Saha Operasyonu ve Test Süreçleri
 
-- Paydaş Katılımı ve İletişim Yönetimi
+-   Paydaş Katılımı ve İletişim Yönetimi
 
----
+------------------------------------------------------------------------
 
 ## Program Bilgisi
 
-| | |
-|:---|:---|
-| ![](assets/icons/office.png){width=32} Microsoft Office | ![](assets/icons/autocad.png){width=32} AutoCAD |
-| | |
-| ![](assets/icons/figma.png){width=32} Figma | ![](assets/icons/fusion360.png){width=32} Fusion 360 |
-| | |
-| ![](assets/icons/jira.png){width=32} Jira | ![](assets/icons/solidworks.png){width=32} SolidWorks |
-| | |
-| ![](assets/icons/msproject.png){width=32} MS Project | ![](assets/icons/catia.png){width=32} Catia |
-| | |
-| ![](assets/icons/photoshop.png){width=32} Photoshop | ![](assets/icons/illustrator.png){width=32} Illustrator |
-| | |
-| ![](assets/icons/inventor.png){width=32} Inventor | ![](assets/icons/siemens-nx.png){width=32} Siemens NX |
-
----
-
-**[CV'mi PDF olarak indir](assets/Mirac-Beltekin-CV.pdf)**
+|  |  |
+|:-----------------------------------|:-----------------------------------|
+| ![](assets/icons/office.png){width="32"} Microsoft Office | ![](assets/icons/autocad.png){width="32"} AutoCAD |
+|  |  |
+| ![](assets/icons/figma.png){width="32"} Figma | ![](assets/icons/fusion360.png){width="32"} Fusion 360 |
+|  |  |
+| ![](assets/icons/jira.png){width="32"} Jira | ![](assets/icons/solidworks.png){width="32"} SolidWorks |
+|  |  |
+| ![](assets/icons/msproject.png){width="32"} MS Project | ![](assets/icons/catia.png){width="32"} Catia |
+|  |  |
+| ![](assets/icons/photoshop.png){width="32"} Photoshop | ![](assets/icons/illustrator.png){width="32"} Illustrator |
+|  |  |
+| ![](assets/icons/inventor.png){width="32"} Inventor | ![](assets/icons/siemens-nx.png){width="32"} Siemens NX |
