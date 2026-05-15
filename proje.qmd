@@ -1,56 +1,225 @@
 ---
-title: "Proje X (proje adını yazınız)"
-number-sections: true
+title: ""
+pagetitle: "Proje — İstanbul Deniz İskeleleri Yolcu Analizi"
+page-layout: full
+toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+          #title-block-header { display: none !important; }
+          main.content { padding-top: 0 !important; }
+        </style>
 ---
 
-**Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.**
+```{=html}
+<!-- ========== STATUS BANNER ========== -->
+<div class="status-banner">
+  <span class="status-dot"></span>
+  Devam ediyor · MUY665 Bahar 2026 dönem projesi
+</div>
 
-(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)
+<!-- ========== PROJE HERO ========== -->
+<section class="profile-hero">
+  <div class="profile-role-label">
+    <span class="hero-label-dot"></span>
+    Dönem Projesi · MUY665
+  </div>
+  <h1 class="profile-name">İstanbul Deniz İskeleleri Yolcu Analizi</h1>
+  <p class="profile-tagline">
+    2024 ve 2025 yıllarında İstanbul'daki deniz iskelelerinde gerçekleşen aylık yolcu hareketinin İBB açık veri seti üzerinden incelenmesi. Operatör, iskele ve dönem bazında trendler; tekil yolcu ile toplam yolculuk sayılarının karşılaştırılması.
+  </p>
+  <div class="profile-meta">
+    <span class="profile-meta-item">
+      <img src="assets/icons/github.png" alt="GitHub">
+      <a href="https://github.com/miracbeltekin/muy665-bahar2026-miracbeltekin" target="_blank">Kaynak kod</a>
+    </span>
+    <span class="profile-meta-item">
+      <strong style="color:var(--bs-body-color);">Yöntem:</strong>
+      <span style="color:var(--bs-secondary-color,#5A6371);">R · Quarto · tidyverse · ggplot2</span>
+    </span>
+  </div>
+</section>
 
-# Proje Genel Bakış ve Kapsamı
+<!-- ========== HIZLI KPI ========== -->
+<section class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Dönem</div>
+    <div class="kpi-value">24 ay</div>
+    <div class="kpi-delta">2024 – 2025</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Veri büyüklüğü</div>
+    <div class="kpi-value">~1.900</div>
+    <div class="kpi-delta">satır · iskele × ay × operatör</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Operatör</div>
+    <div class="kpi-value">8</div>
+    <div class="kpi-delta">İBB, Şehir Hatları, TURYOL...</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">İskele</div>
+    <div class="kpi-value">73</div>
+    <div class="kpi-delta">benzersiz istasyon</div>
+  </div>
+</section>
 
-xxxxxx
+<!-- ========== PROJE KONUSU ========== -->
+<section class="section-wrap">
+  <span class="section-label">01 — Proje Konusu</span>
+  <h2 class="section-title">Boğaz'ın altında kaç insan akıyor?</h2>
+  <p class="section-subtitle">
+    İstanbul'da deniz hatları, kentin günlük hareketliliğinin sessiz ama kritik bir parçası. Köprüler tıkanırken, vapur ve motorlar yüz binlerce insanı bir yakadan diğerine taşımaya devam ediyor. Bu projede, İBB'nin paylaştığı 2024 ve 2025 yıllarına ait iskele bazlı yolcu verilerini kullanarak bu hareketliliğin yapısını sorguluyorum.
+  </p>
 
-# Veri
+  <ul class="question-list">
+    <li class="question-item">
+      <span class="question-num">Q1</span>
+      <span class="question-text">2024'ten 2025'e iskele bazında yolcu sayıları nasıl değişti? Genel olarak artış mı, azalış mı var?</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">Q2</span>
+      <span class="question-text">Hangi iskeleler kentin "ana arterleri"? En yüksek yolculuk hacmi hangi hatlarda?</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">Q3</span>
+      <span class="question-text">Mevsimsel desen var mı? Yaz–kış arasında iskele kullanımı nasıl değişiyor?</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">Q4</span>
+      <span class="question-text">Operatörler arasındaki pazar payı nasıl dağılıyor? İBB tek başına ne kadar pay alıyor?</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">Q5</span>
+      <span class="question-text">Tekil yolcu ve toplam yolculuk arasındaki fark hangi iskelelerde belirgin? Bu farkın anlamı ne olabilir?</span>
+    </li>
+  </ul>
+</section>
 
-xxxxxx
+<!-- ========== VERİ ========== -->
+<section class="section-wrap">
+  <span class="section-label">02 — Veri</span>
+  <h2 class="section-title">Kaynak ve yapı</h2>
+  <p class="section-subtitle">
+    Veriler İstanbul Büyükşehir Belediyesi Açık Veri Portalı'ndan, "İstanbul Denizinde İskele Bazlı Yolcu Sayıları" başlığı altında temin edilmiştir. 2024 ve 2025 yılları için ayrı CSV dosyaları olarak sunulmaktadır.
+  </p>
 
-## Veri Kaynağı
+  <a href="https://data.ibb.gov.tr/dataset" target="_blank" class="data-source-card">
+    <div class="data-source-info">
+      <span class="data-source-label">Veri Kaynağı</span>
+      <span class="data-source-title">İBB Açık Veri Portalı</span>
+      <span class="data-source-meta">data.ibb.gov.tr · CSV format</span>
+    </div>
+    <span class="data-source-arrow">↗</span>
+  </a>
 
-xxxxxx
+  <h3 style="margin-top:2.5rem;">Değişkenler</h3>
+  <p>Veri seti aşağıdaki sütunları içermektedir:</p>
 
-## Veri Hakkında Genel Bilgiler
+  <ul class="question-list" style="margin-top:1rem;">
+    <li class="question-item">
+      <span class="question-num">yil</span>
+      <span class="question-text">Verinin ait olduğu yıl (2024 veya 2025).</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">ay</span>
+      <span class="question-text">Verinin ait olduğu ay (1 – 12).</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">otorite_adi</span>
+      <span class="question-text">İskeleyi işleten kurum veya işletme (İBB, Şehir Hatları, TURYOL, vb.).</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">istasyon_adi</span>
+      <span class="question-text">İskele/istasyon adı (örn. Eminönü, Beşiktaş, Kadıköy).</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">tekil_yolcu_sayisi</span>
+      <span class="question-text">İlgili ay içinde iskeleyi kullanan benzersiz (tekil) yolcu sayısı.</span>
+    </li>
+    <li class="question-item">
+      <span class="question-num">toplam_yolculuk</span>
+      <span class="question-text">İlgili ay içinde gerçekleşen toplam yolculuk sayısı (aynı yolcu birden fazla geçiş yapabilir).</span>
+    </li>
+  </ul>
 
-xxxxxx
+  <h3 style="margin-top:2.5rem;">Ön işleme</h3>
+  <p>
+    Veri analize hazır hale getirilmeden önce aşağıdaki adımlar uygulanmıştır:
+  </p>
+  <ul>
+    <li>2024 dosyası virgül (<code>,</code>), 2025 dosyası noktalı virgül (<code>;</code>) ile ayrılmıştı; her iki dosya da uygun ayraçla okunmuş, sonra birleştirilmiştir.</li>
+    <li>2025 dosyasındaki <code>yolcu_sayisi</code> sütunu, 2024 ile uyumlu olması için <code>toplam_yolculuk_sayisi</code> olarak yeniden adlandırıldı.</li>
+    <li>İskele adlarındaki tutarsızlıklar (örn. <code>BOSTANCI</code> / <code>Bostancı</code>) standartlaştırıldı.</li>
+    <li>Boş <code>istasyon_adi</code> içeren satırlar filtrelendi.</li>
+    <li>Tarih sütunu, <code>yil</code> ve <code>ay</code> birleştirilerek <code>tarih</code> olarak oluşturuldu.</li>
+  </ul>
+</section>
 
-## Tercih Sebebi
+<!-- ========== YÖNTEM ========== -->
+<section class="section-wrap">
+  <span class="section-label">03 — Yöntem</span>
+  <h2 class="section-title">Yaklaşım ve araçlar</h2>
+  <p class="section-subtitle">
+    Tüm analiz R üzerinde yapılmıştır. Veri okuma, temizleme ve dönüştürme için tidyverse paketleri; görselleştirme için ggplot2 kullanılmıştır. Rapor Quarto ile yeniden üretilebilir biçimde hazırlanmıştır.
+  </p>
 
-xxxxxx
+  <div class="tech-pills">
+    <span class="tech-pill">R 4.5</span>
+    <span class="tech-pill">Quarto</span>
+    <span class="tech-pill">tidyverse</span>
+    <span class="tech-pill">dplyr</span>
+    <span class="tech-pill">tidyr</span>
+    <span class="tech-pill">readr</span>
+    <span class="tech-pill">lubridate</span>
+    <span class="tech-pill">ggplot2</span>
+    <span class="tech-pill">scales</span>
+    <span class="tech-pill">forcats</span>
+  </div>
+</section>
 
-## Ön İşleme
+<!-- ========== SONUÇLAR (henüz boş — analiz sonrası dolacak) ========== -->
+<section class="section-wrap">
+  <span class="section-label">04 — Sonuçlar</span>
+  <h2 class="section-title">Bulgular</h2>
+  <p class="section-subtitle">
+    Bu bölüm analiz tamamlandıkça her bir araştırma sorusu için elde edilen bulgu ve grafiklerle güncellenecektir.
+  </p>
 
-xxxxxx
+  <div class="finding-card">
+    <div class="finding-title">Q1 – Yıllar arası değişim</div>
+    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+  </div>
 
-# Analiz
+  <div class="finding-card">
+    <div class="finding-title">Q2 – En yoğun iskeleler</div>
+    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+  </div>
 
-xxxxxx
+  <div class="finding-card">
+    <div class="finding-title">Q3 – Mevsimsel desen</div>
+    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+  </div>
 
-## Keşifsel Veri Analizi
+  <div class="finding-card">
+    <div class="finding-title">Q4 – Operatör pazar payı</div>
+    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+  </div>
 
-xxxxxx
+  <div class="finding-card">
+    <div class="finding-title">Q5 – Tekil yolcu vs. toplam yolculuk</div>
+    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+  </div>
+</section>
 
-## Trend Analizi
-
-xxxxxx
-
-## Model Uydurma
-
-xxxxxx
-
-## Sonuçlar
-
-xxxxxx
-
-# Sonuçlar ve Ana Çıkarımlar
-
-xxxxxx
+<!-- ========== HAKKINDA / NOTLAR ========== -->
+<section class="section-wrap">
+  <span class="section-label">05 — Notlar</span>
+  <h2 class="section-title">Çalışma hakkında</h2>
+  <p class="section-subtitle">
+    Bu proje, Hacettepe Üniversitesi Mühendislik Yönetimi Yüksek Lisans programındaki MUY665 — İş Analitiği dersi (Bahar 2026) kapsamında, Dr. Erdi Daşdemir danışmanlığında bireysel olarak hazırlanmaktadır.
+  </p>
+</section>
+```

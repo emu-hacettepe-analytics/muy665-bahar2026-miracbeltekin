@@ -1,13 +1,100 @@
 ---
-title: "Portfolyo"
+title: ""
+pagetitle: "Portfolyo — Miraç Beltekin"
+page-layout: full
+toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+          #title-block-header { display: none !important; }
+          main.content { padding-top: 0 !important; }
+        </style>
 ---
 
-Bu sayfada MUY665 İş Analitiği dersi kapsamında yaptığım ödevleri bulabilirsiniz.
+```{=html}
+<!-- ========== HERO ========== -->
+<section class="profile-hero">
+  <div class="profile-role-label">
+    <span class="hero-label-dot"></span>
+    MUY665 · Bahar 2026 — İş Analitiği
+  </div>
+  <h1 class="profile-name">Portfolyo</h1>
+  <p class="profile-tagline">
+    Ders kapsamında haftalık olarak hazırlanan ödevler, alıştırmalar ve mini analizler. Her çalışma Quarto ile yayımlanmış, yeniden üretilebilir bir HTML rapor olarak sunulmuştur.
+  </p>
+</section>
 
-------------------------------------------------------------------------
+<!-- ========== ÖDEVLER ========== -->
+<section class="section-wrap">
+  <span class="section-label">Ödevler</span>
+  <h2 class="section-title">Haftalık çalışmalar</h2>
+  <p class="section-subtitle">
+    Aşağıdaki kartlardan herhangi birine tıklayarak ilgili çalışmanın detaylarına ulaşabilirsin.
+  </p>
 
-## Ödevler
+  <div class="portfolio-grid">
 
-[**Ödev 1**](portfolyo/calisma1.qmd) · Video özeti ve sorular
+    <a href="portfolyo/calisma1.qmd" class="portfolio-card">
+      <div class="portfolio-card-meta">
+        <span class="portfolio-card-number">01 / Ödev</span>
+        <span class="portfolio-card-status">Tamamlandı</span>
+      </div>
+      <h3 class="portfolio-card-title">Video özeti ve sorular</h3>
+      <p class="portfolio-card-desc">
+        Ders kapsamında izlenen video içeriğinin özetlenmesi ve ilgili soruların yanıtlanması.
+      </p>
+      <div class="portfolio-card-footer">
+        <span>Markdown · Quarto</span>
+        <span class="portfolio-arrow">→</span>
+      </div>
+    </a>
 
-[**Ödev 2**](portfolyo/calisma2.qmd) · R programlama ile veri analizi
+    <a href="portfolyo/calisma2.qmd" class="portfolio-card">
+      <div class="portfolio-card-meta">
+        <span class="portfolio-card-number">02 / Ödev</span>
+        <span class="portfolio-card-status">Tamamlandı</span>
+      </div>
+      <h3 class="portfolio-card-title">R ile veri analizi</h3>
+      <p class="portfolio-card-desc">
+        R programlama dili kullanılarak gerçekleştirilen veri okuma, işleme ve temel görselleştirme çalışması.
+      </p>
+      <div class="portfolio-card-footer">
+        <span>R · tidyverse · ggplot2</span>
+        <span class="portfolio-arrow">→</span>
+      </div>
+    </a>
+
+    <div class="portfolio-card placeholder">
+      <div class="placeholder-icon">+</div>
+      <div class="placeholder-text">Yeni çalışma yakında</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== DİĞER ÇALIŞMALAR (gelecek için bölüm) ========== -->
+<section class="section-wrap">
+  <span class="section-label">Diğer</span>
+  <h2 class="section-title">Mini analizler ve alıştırmalar</h2>
+  <p class="section-subtitle">
+    Ders kapsamı dışında, kendi başına denediğim küçük analiz örnekleri ve veri görselleştirme alıştırmaları burada yer alacak.
+  </p>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card placeholder">
+      <div class="placeholder-icon">+</div>
+      <div class="placeholder-text">Yakında</div>
+    </div>
+    <div class="portfolio-card placeholder">
+      <div class="placeholder-icon">+</div>
+      <div class="placeholder-text">Yakında</div>
+    </div>
+    <div class="portfolio-card placeholder">
+      <div class="placeholder-icon">+</div>
+      <div class="placeholder-text">Yakında</div>
+    </div>
+  </div>
+</section>
+```

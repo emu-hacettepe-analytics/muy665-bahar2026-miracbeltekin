@@ -2,79 +2,16 @@
   {
     "objectID": "proje.html",
     "href": "proje.html",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "İstanbul Deniz İskeleleri Yolcu Analizi",
     "section": "",
-    "text": "Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
-  },
-  {
-    "objectID": "proje.html#veri-kaynağı",
-    "href": "proje.html#veri-kaynağı",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "2.1 Veri Kaynağı",
-    "text": "2.1 Veri Kaynağı\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#veri-hakkında-genel-bilgiler",
-    "href": "proje.html#veri-hakkında-genel-bilgiler",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "2.2 Veri Hakkında Genel Bilgiler",
-    "text": "2.2 Veri Hakkında Genel Bilgiler\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#tercih-sebebi",
-    "href": "proje.html#tercih-sebebi",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "2.3 Tercih Sebebi",
-    "text": "2.3 Tercih Sebebi\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#ön-işleme",
-    "href": "proje.html#ön-işleme",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "2.4 Ön İşleme",
-    "text": "2.4 Ön İşleme\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#keşifsel-veri-analizi",
-    "href": "proje.html#keşifsel-veri-analizi",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "3.1 Keşifsel Veri Analizi",
-    "text": "3.1 Keşifsel Veri Analizi\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#trend-analizi",
-    "href": "proje.html#trend-analizi",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "3.2 Trend Analizi",
-    "text": "3.2 Trend Analizi\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#model-uydurma",
-    "href": "proje.html#model-uydurma",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "3.3 Model Uydurma",
-    "text": "3.3 Model Uydurma\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#sonuçlar",
-    "href": "proje.html#sonuçlar",
-    "title": "Proje X (proje adını yazınız)",
-    "section": "3.4 Sonuçlar",
-    "text": "3.4 Sonuçlar\nxxxxxx"
+    "text": "Devam ediyor · MUY665 Bahar 2026 dönem projesi\n\n\n\n\n  \n    \n    Dönem Projesi · MUY665\n  \n  İstanbul Deniz İskeleleri Yolcu Analizi\n  \n    2024 ve 2025 yıllarında İstanbul'daki deniz iskelelerinde gerçekleşen aylık yolcu hareketinin İBB açık veri seti üzerinden incelenmesi. Operatör, iskele ve dönem bazında trendler; tekil yolcu ile toplam yolculuk sayılarının karşılaştırılması.\n  \n  \n    \n      \n      Kaynak kod\n    \n    \n      Yöntem:\n      R · Quarto · tidyverse · ggplot2\n    \n  \n\n\n\n\n  \n    Dönem\n    24 ay\n    2024 – 2025\n  \n  \n    Veri büyüklüğü\n    ~1.900\n    satır · iskele × ay × operatör\n  \n  \n    Operatör\n    8\n    İBB, Şehir Hatları, TURYOL...\n  \n  \n    İskele\n    73\n    benzersiz istasyon\n  \n\n\n\n\n  01 — Proje Konusu\n  Boğaz'ın altında kaç insan akıyor?\n  \n    İstanbul'da deniz hatları, kentin günlük hareketliliğinin sessiz ama kritik bir parçası. Köprüler tıkanırken, vapur ve motorlar yüz binlerce insanı bir yakadan diğerine taşımaya devam ediyor. Bu projede, İBB'nin paylaştığı 2024 ve 2025 yıllarına ait iskele bazlı yolcu verilerini kullanarak bu hareketliliğin yapısını sorguluyorum.\n  \n\n  \n    \n      Q1\n      2024'ten 2025'e iskele bazında yolcu sayıları nasıl değişti? Genel olarak artış mı, azalış mı var?\n    \n    \n      Q2\n      Hangi iskeleler kentin \"ana arterleri\"? En yüksek yolculuk hacmi hangi hatlarda?\n    \n    \n      Q3\n      Mevsimsel desen var mı? Yaz–kış arasında iskele kullanımı nasıl değişiyor?\n    \n    \n      Q4\n      Operatörler arasındaki pazar payı nasıl dağılıyor? İBB tek başına ne kadar pay alıyor?\n    \n    \n      Q5\n      Tekil yolcu ve toplam yolculuk arasındaki fark hangi iskelelerde belirgin? Bu farkın anlamı ne olabilir?\n    \n  \n\n\n\n\n  02 — Veri\n  Kaynak ve yapı\n  \n    Veriler İstanbul Büyükşehir Belediyesi Açık Veri Portalı'ndan, \"İstanbul Denizinde İskele Bazlı Yolcu Sayıları\" başlığı altında temin edilmiştir. 2024 ve 2025 yılları için ayrı CSV dosyaları olarak sunulmaktadır.\n  \n\n  \n    \n      Veri Kaynağı\n      İBB Açık Veri Portalı\n      data.ibb.gov.tr · CSV format\n    \n    ↗\n  \n\n  Değişkenler\n  Veri seti aşağıdaki sütunları içermektedir:\n\n  \n    \n      yil\n      Verinin ait olduğu yıl (2024 veya 2025).\n    \n    \n      ay\n      Verinin ait olduğu ay (1 – 12).\n    \n    \n      otorite_adi\n      İskeleyi işleten kurum veya işletme (İBB, Şehir Hatları, TURYOL, vb.).\n    \n    \n      istasyon_adi\n      İskele/istasyon adı (örn. Eminönü, Beşiktaş, Kadıköy).\n    \n    \n      tekil_yolcu_sayisi\n      İlgili ay içinde iskeleyi kullanan benzersiz (tekil) yolcu sayısı.\n    \n    \n      toplam_yolculuk\n      İlgili ay içinde gerçekleşen toplam yolculuk sayısı (aynı yolcu birden fazla geçiş yapabilir).\n    \n  \n\n  Ön işleme\n  \n    Veri analize hazır hale getirilmeden önce aşağıdaki adımlar uygulanmıştır:\n  \n  \n    2024 dosyası virgül (,), 2025 dosyası noktalı virgül (;) ile ayrılmıştı; her iki dosya da uygun ayraçla okunmuş, sonra birleştirilmiştir.\n    2025 dosyasındaki yolcu_sayisi sütunu, 2024 ile uyumlu olması için toplam_yolculuk_sayisi olarak yeniden adlandırıldı.\n    İskele adlarındaki tutarsızlıklar (örn. BOSTANCI / Bostancı) standartlaştırıldı.\n    Boş istasyon_adi içeren satırlar filtrelendi.\n    Tarih sütunu, yil ve ay birleştirilerek tarih olarak oluşturuldu.\n  \n\n\n\n\n  03 — Yöntem\n  Yaklaşım ve araçlar\n  \n    Tüm analiz R üzerinde yapılmıştır. Veri okuma, temizleme ve dönüştürme için tidyverse paketleri; görselleştirme için ggplot2 kullanılmıştır. Rapor Quarto ile yeniden üretilebilir biçimde hazırlanmıştır.\n  \n\n  \n    R 4.5\n    Quarto\n    tidyverse\n    dplyr\n    tidyr\n    readr\n    lubridate\n    ggplot2\n    scales\n    forcats\n  \n\n\n\n\n  04 — Sonuçlar\n  Bulgular\n  \n    Bu bölüm analiz tamamlandıkça her bir araştırma sorusu için elde edilen bulgu ve grafiklerle güncellenecektir.\n  \n\n  \n    Q1 – Yıllar arası değişim\n    Analiz sonrası eklenecek.\n  \n\n  \n    Q2 – En yoğun iskeleler\n    Analiz sonrası eklenecek.\n  \n\n  \n    Q3 – Mevsimsel desen\n    Analiz sonrası eklenecek.\n  \n\n  \n    Q4 – Operatör pazar payı\n    Analiz sonrası eklenecek.\n  \n\n  \n    Q5 – Tekil yolcu vs. toplam yolculuk\n    Analiz sonrası eklenecek.\n  \n\n\n\n\n  05 — Notlar\n  Çalışma hakkında\n  \n    Bu proje, Hacettepe Üniversitesi Mühendislik Yönetimi Yüksek Lisans programındaki MUY665 — İş Analitiği dersi (Bahar 2026) kapsamında, Dr. Erdi Daşdemir danışmanlığında bireysel olarak hazırlanmaktadır.\n  \n\n\n\n\n Back to top"
   },
   {
     "objectID": "portfolyo.html",
     "href": "portfolyo.html",
     "title": "Portfolyo",
     "section": "",
-    "text": "Bu sayfada MUY665 İş Analitiği dersi kapsamında yaptığım ödevleri bulabilirsiniz."
-  },
-  {
-    "objectID": "portfolyo.html#ödevler",
-    "href": "portfolyo.html#ödevler",
-    "title": "Portfolyo",
-    "section": "Ödevler",
-    "text": "Ödevler\nÖdev 1 · Video özeti ve sorular\nÖdev 2 · R programlama ile veri analizi"
+    "text": "MUY665 · Bahar 2026 — İş Analitiği\n  \n  Portfolyo\n  \n    Ders kapsamında haftalık olarak hazırlanan ödevler, alıştırmalar ve mini analizler. Her çalışma Quarto ile yayımlanmış, yeniden üretilebilir bir HTML rapor olarak sunulmuştur.\n  \n\n\n\n\n  Ödevler\n  Haftalık çalışmalar\n  \n    Aşağıdaki kartlardan herhangi birine tıklayarak ilgili çalışmanın detaylarına ulaşabilirsin.\n  \n\n  \n\n    \n      \n        01 / Ödev\n        Tamamlandı\n      \n      Video özeti ve sorular\n      \n        Ders kapsamında izlenen video içeriğinin özetlenmesi ve ilgili soruların yanıtlanması.\n      \n      \n        Markdown · Quarto\n        →\n      \n    \n\n    \n      \n        02 / Ödev\n        Tamamlandı\n      \n      R ile veri analizi\n      \n        R programlama dili kullanılarak gerçekleştirilen veri okuma, işleme ve temel görselleştirme çalışması.\n      \n      \n        R · tidyverse · ggplot2\n        →\n      \n    \n\n    \n      +\n      Yeni çalışma yakında\n    \n\n  \n\n\n\n\n  Diğer\n  Mini analizler ve alıştırmalar\n  \n    Ders kapsamı dışında, kendi başına denediğim küçük analiz örnekleri ve veri görselleştirme alıştırmaları burada yer alacak.\n  \n\n  \n    \n      +\n      Yakında\n    \n    \n      +\n      Yakında\n    \n    \n      +\n      Yakında\n    \n  \n\n\n\n\n Back to top"
   },
   {
     "objectID": "portfolyo/calisma1.html",
@@ -98,60 +35,18 @@
     "text": "Sorular\n\nAçık Uçlu Soru\nSoru: Veri biliminde “alan uzmanlığı” (domain knowledge) neden vazgeçilmezdir?\nCevap: Sadece teknik modelleme bilgisiyle gerçekçi sonuçlar üretilemez; veriyi doğru şekilde işlemek, doğru soruları sormak ve çıkan sonuçları iş hedefleriyle uyumlu şekilde yorumlayabilmek için ilgili sektörü veya problemi derinlemesine tanımak gerekir.\n\n\n\nÇoktan Seçmeli Soru\nSoru: Kerem Demirtaş, endüstri mühendislerinin piyasadaki değerini artırmak ve “programlama kaslarını” güçlendirmek için hangi programlama dilini öğrenmelerini özellikle tavsiye etmektedir?\n\nJava\nC++\nPython\nSQL\n\nDoğru Cevap: C\nAçıklama: Demirtaş, Python’un hem öğrenilmesinin kolay olması hem de nesne yönelimli ve fonksiyonel paradigmaları desteklemesi sayesinde veri biliminin her aşamasında (veri hazırlama, modelleme vb.) kullanılabileceğini belirterek bu dili şiddetle tavsiye etmektedir"
   },
   {
-    "objectID": "about.html#miraç-beltekin",
-    "href": "about.html#miraç-beltekin",
-    "title": "Hakkımda",
-    "section": "Miraç Beltekin",
-    "text": "Miraç Beltekin\nProje Mühendisi\nİletişim: mirac.beltekin@gmail.com · Ankara, Türkiye"
-  },
-  {
-    "objectID": "about.html#eğitim",
-    "href": "about.html#eğitim",
-    "title": "Hakkımda",
-    "section": "Eğitim",
-    "text": "Eğitim\nHacettepe Üniversitesi\n2026 - Devam Ediyor\nMühendislik Yönetimi, Yüksek Lisans\nGazi Üniversitesi\n2016 - 2021\nEndüstriyel Tasarım Mühendisliği, Lisans"
-  },
-  {
-    "objectID": "about.html#deneyim",
-    "href": "about.html#deneyim",
-    "title": "Hakkımda",
-    "section": "Deneyim",
-    "text": "Deneyim\nTripy Mobility Teknoloji A.Ş.\nEkim 2022 - Devam Ediyor\nProje Mühendisi\nMİA Teknoloji A.Ş.\nHaziran 2020 - Ekim 2022\nEndüstriyel Tasarım Mühendisi\nMFK Makina\nTemmuz 2019\nStajyer Mühendis\nÖzben Savunma\nTemmuz 2018\nStajyer Mühendis"
-  },
-  {
-    "objectID": "about.html#sertifikalar",
-    "href": "about.html#sertifikalar",
-    "title": "Hakkımda",
-    "section": "Sertifikalar",
-    "text": "Sertifikalar\n\nPMI Onaylı PMP® Sertifikası Eğitimi\nGoogle UX Design Sertifikası\nGoogle AI Essentials Sertifikası\nİHA-2 Pilotluk Lisansı\nAS 9100: Havacılık/Savunma Standartları\nIATF 16949: Otomotiv Kalite Standartları"
-  },
-  {
-    "objectID": "about.html#yetkinlikler",
-    "href": "about.html#yetkinlikler",
-    "title": "Hakkımda",
-    "section": "Yetkinlikler",
-    "text": "Yetkinlikler\n\nUçtan Uca Ürün Yönetimi\nKapsam, Değişim ve Risk Yönetimi\nZaman ve Maliyet Planlaması\nÜrün Geliştirme ve Üretim Takibi\nÇevik ve Hibrit Proje Yönetimi\nSaha Operasyonu ve Test Süreçleri\nPaydaş Katılımı ve İletişim Yönetimi"
-  },
-  {
-    "objectID": "about.html#program-bilgisi",
-    "href": "about.html#program-bilgisi",
-    "title": "Hakkımda",
-    "section": "Program Bilgisi",
-    "text": "Program Bilgisi\n\n\n\n\n\n\n\n Microsoft Office\n AutoCAD\n\n\n\n\n\n\n Figma\n Fusion 360\n\n\n\n\n\n\n Jira\n SolidWorks\n\n\n\n\n\n\n MS Project\n Catia\n\n\n\n\n\n\n Photoshop\n Illustrator\n\n\n\n\n\n\n Inventor\n Siemens NX"
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Miraç Beltekin",
+    "section": "",
+    "text": "Proje Mühendisi · Ankara\n  \n  Miraç Beltekin\n  \n    Endüstriyel tasarım mühendisliği lisansı, beş yıllık proje mühendisliği deneyimi ve mühendislik yönetimi yüksek lisansı ile ürün geliştirme süreçlerini veri analitiği perspektifiyle birleştiriyorum.\n  \n  \n    \n      \n      mirac.beltekin@gmail.com\n    \n    \n      \n      miracbeltekin\n    \n    \n      \n      miracbeltekin\n    \n  \n\n\n\n\n  01 — Eğitim\n  Akademik geçmiş\n\n  \n\n    \n      2026 — Devam Ediyor\n      Hacettepe Üniversitesi\n      Mühendislik Yönetimi · Yüksek Lisans\n    \n\n    \n      2016 — 2021\n      Gazi Üniversitesi\n      Endüstriyel Tasarım Mühendisliği · Lisans\n    \n\n  \n\n\n\n\n  02 — Deneyim\n  Profesyonel deneyim\n\n  \n\n    \n      Ekim 2022 — Devam Ediyor\n      Tripy Mobility Teknoloji A.Ş.\n      Proje Mühendisi\n    \n\n    \n      Haziran 2020 — Ekim 2022\n      MİA Teknoloji A.Ş.\n      Endüstriyel Tasarım Mühendisi\n    \n\n    \n      Temmuz 2019\n      MFK Makina\n      Stajyer Mühendis\n    \n\n    \n      Temmuz 2018\n      Özben Savunma\n      Stajyer Mühendis\n    \n\n  \n\n\n\n\n  03 — Sertifikalar\n  Profesyonel sertifikalar\n\n  \n    PMI Onaylı PMP® Sertifikası Eğitimi\n    Google UX Design Sertifikası\n    Google AI Essentials Sertifikası\n    İHA-2 Pilotluk Lisansı\n    AS 9100: Havacılık / Savunma\n    IATF 16949: Otomotiv Kalite\n  \n\n\n\n\n  04 — Yetkinlikler\n  Uzmanlık alanları\n\n  \n    Uçtan uca ürün yönetimi\n    Kapsam, değişim ve risk yönetimi\n    Zaman ve maliyet planlaması\n    Ürün geliştirme ve üretim takibi\n    Çevik ve hibrit proje yönetimi\n    Saha operasyonu ve test süreçleri\n    Paydaş katılımı ve iletişim yönetimi\n  \n\n\n\n\n  05 — Yazılım\n  Kullandığım programlar\n\n  \n    \n      \n      Microsoft Office\n    \n    \n      \n      AutoCAD\n    \n    \n      \n      Figma\n    \n    \n      \n      Fusion 360\n    \n    \n      \n      Jira\n    \n    \n      \n      SolidWorks\n    \n    \n      \n      MS Project\n    \n    \n      \n      Catia\n    \n    \n      \n      Photoshop\n    \n    \n      \n      Illustrator\n    \n    \n      \n      Inventor\n    \n    \n      \n      Siemens NX\n    \n  \n\n\n\n\n  Birlikte çalışmaya açığım\n  \n    Proje yönetimi, ürün geliştirme veya veri analitiği konularında iletişime geçebilirsin.\n  \n  \n    \n      mirac.beltekin@gmail.com\n    \n    \n      LinkedIn\n    \n  \n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Merhaba Analtik Sayfama Hoş Geldiniz",
+    "title": "\n        Merhaba, ben Miraç.\n    ",
     "section": "",
-    "text": "Ben Miraç Beltekin. Hacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans öğrencisiyim.\nBu web sitesinde MUY665 - İş Analitiği dersi kapsamındaki çalışmalarımı paylaşıyorum.\n\n\n\nE-posta: mirac.beltekin@gmail.com\nGitHub: github.com/miracbeltekin\nLinkedIn: linkedin.com/in/miracbeltekin"
-  },
-  {
-    "objectID": "index.html#başlangıç",
-    "href": "index.html#başlangıç",
-    "title": "Merhaba Analtik Sayfama Hoş Geldiniz",
-    "section": "",
-    "text": "Ben Miraç Beltekin. Hacettepe Üniversitesi Mühendislik Yönetimi yüksek lisans öğrencisiyim.\nBu web sitesinde MUY665 - İş Analitiği dersi kapsamındaki çalışmalarımı paylaşıyorum.\n\n\n\nE-posta: mirac.beltekin@gmail.com\nGitHub: github.com/miracbeltekin\nLinkedIn: linkedin.com/in/miracbeltekin"
+    "text": "Hacettepe IE · MUY665 — Bahar 2026\n    \n    \n        Merhaba, ben Miraç.\n    \n    \n        Proje Mühendisiyim, Hacettepe'de mühendislik yönetimi yüksek lisansı yapıyorum. Bu sayfa, akademik ve profesyonel çalışmalarımın açık bir kaydıdır.\n\n    \n    \n      \n        Dönem projesini incele\n        →\n      \n      \n        Hakkımda\n      \n    \n  \n\n\n\n\n  \n    Eğitim\n    2026\n    Hacettepe IE · Mühendislik Yönetimi\n  \n  \n    Profesyonel deneyim\n    0+ yıl\n    Proje & ürün mühendisliği\n  \n  \n    Bu dönem\n    R + Quarto\n    MUY665 — İş Analitiği\n  \n\n\n\n\n  Bu sitede\n  Üç sayfa, üç farklı odak\n  \n    Profesyonel arka planımdan ders kapsamındaki analitik çalışmalara, dönem projeme kadar her şey burada.\n  \n\n  \n\n    \n      \n        Dönem Projesi · Devam ediyor\n        İstanbul deniz iskeleleri yolcu analizi\n        \n          2024–2025 İBB açık veri seti üzerinde aylık iskele bazında yolcu hareketi. Trend, sezonsallık ve operatör karşılaştırması. R + Quarto ile yeniden üretilebilir bir analiz.\n        \n      \n      \n        Quarto · R · ggplot2\n        →\n      \n    \n\n    \n      \n        01 — Hakkımda\n        Endüstriyel tasarımdan mühendislik yönetimine\n        \n          Eğitim geçmişim, profesyonel deneyimim, kullandığım araçlar ve sertifikalar.\n        \n      \n      \n        CV · Yetkinlikler\n        →\n      \n    \n\n    \n      \n        02 — Portfolyo\n        Ders kapsamındaki ödevler ve mini analizler\n        \n          Haftalık çalışmalar, alıştırmalar ve veri görselleştirme örnekleri. Quarto ile yayımlanmış.\n        \n      \n      \n        Ödevler · Egzersizler\n        →\n      \n    \n\n  \n\n\n\n\n  \n    R\n    Quarto\n    ggplot2\n    dplyr\n    tidyverse\n    GitHub\n    Git\n    AutoCAD\n    SolidWorks\n    Fusion 360\n    MS Project\n    Jira\n    Microsoft Office\n    Photoshop\n    Illustrator\n    \n    R\n    Quarto\n    ggplot2\n    dplyr\n    tidyverse\n    GitHub\n    Git\n    AutoCAD\n    SolidWorks\n    Fusion 360\n    MS Project\n    Jira\n    Microsoft Office\n    Photoshop\n    Illustrator\n  \n\n\n\n\n  Bir konuda iş birliği yapalım mı?\n  \n    Yeni fikirler, ortak projeler ve geri bildirim için açığım. Aşağıdan ulaşabilirsin.\n  \n  \n    \n      mirac.beltekin@gmail.com\n    \n    \n      LinkedIn\n    \n    \n      GitHub\n    \n  \n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "portfolyo/calisma2.html#paket-ve-veri-yükleme",

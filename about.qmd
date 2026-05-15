@@ -1,108 +1,205 @@
 ---
-title: "Hakkımda"
-sidebar: false
+title: ""
+pagetitle: "Hakkımda — Miraç Beltekin"
+page-layout: full
+toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+          #title-block-header { display: none !important; }
+          main.content { padding-top: 0 !important; }
+        </style>
 ---
 
-![](assets/foto.jpg){width="150"}
+```{=html}
+<!-- ========== PROFİL HERO ========== -->
+<section class="profile-hero">
+  <div class="profile-photo-wrap">
+    <img src="assets/foto.jpg" alt="Miraç Beltekin" class="profile-photo">
+  </div>
+  <div class="profile-role-label">
+    <span class="hero-label-dot"></span>
+    Proje Mühendisi · Ankara
+  </div>
+  <h1 class="profile-name">Miraç Beltekin</h1>
+  <p class="profile-tagline">
+    Endüstriyel tasarım mühendisliği lisansı, beş yıllık proje mühendisliği deneyimi ve mühendislik yönetimi yüksek lisansı ile ürün geliştirme süreçlerini veri analitiği perspektifiyle birleştiriyorum.
+  </p>
+  <div class="profile-meta">
+    <span class="profile-meta-item">
+      <img src="assets/icons/gmail.png" alt="E-posta">
+      <a href="mailto:mirac.beltekin@gmail.com">mirac.beltekin@gmail.com</a>
+    </span>
+    <span class="profile-meta-item">
+      <img src="assets/icons/github.png" alt="GitHub">
+      <a href="https://github.com/miracbeltekin" target="_blank">miracbeltekin</a>
+    </span>
+    <span class="profile-meta-item">
+      <img src="assets/icons/likedin.png" alt="LinkedIn">
+      <a href="https://www.linkedin.com/in/miracbeltekin" target="_blank">miracbeltekin</a>
+    </span>
+  </div>
+</section>
 
-## Miraç Beltekin
+<!-- ========== EĞİTİM ========== -->
+<section class="section-wrap">
+  <span class="section-label">01 — Eğitim</span>
+  <h2 class="section-title">Akademik geçmiş</h2>
 
-**Proje Mühendisi**
+  <div class="timeline">
 
-**İletişim:** mirac.beltekin\@gmail.com · Ankara, Türkiye
+    <div class="timeline-item">
+      <div class="timeline-period">2026 — Devam Ediyor</div>
+      <div class="timeline-title">Hacettepe Üniversitesi</div>
+      <div class="timeline-subtitle">Mühendislik Yönetimi · Yüksek Lisans</div>
+    </div>
 
-------------------------------------------------------------------------
+    <div class="timeline-item">
+      <div class="timeline-period">2016 — 2021</div>
+      <div class="timeline-title">Gazi Üniversitesi</div>
+      <div class="timeline-subtitle">Endüstriyel Tasarım Mühendisliği · Lisans</div>
+    </div>
 
-## Eğitim
+  </div>
+</section>
 
-**Hacettepe Üniversitesi**
+<!-- ========== DENEYİM ========== -->
+<section class="section-wrap">
+  <span class="section-label">02 — Deneyim</span>
+  <h2 class="section-title">Profesyonel deneyim</h2>
 
-*2026 - Devam Ediyor*
+  <div class="timeline">
 
-Mühendislik Yönetimi, Yüksek Lisans
+    <div class="timeline-item">
+      <div class="timeline-period">Ekim 2022 — Devam Ediyor</div>
+      <div class="timeline-title">Tripy Mobility Teknoloji A.Ş.</div>
+      <div class="timeline-subtitle">Proje Mühendisi</div>
+    </div>
 
-**Gazi Üniversitesi**
+    <div class="timeline-item">
+      <div class="timeline-period">Haziran 2020 — Ekim 2022</div>
+      <div class="timeline-title">MİA Teknoloji A.Ş.</div>
+      <div class="timeline-subtitle">Endüstriyel Tasarım Mühendisi</div>
+    </div>
 
-*2016 - 2021*
+    <div class="timeline-item">
+      <div class="timeline-period">Temmuz 2019</div>
+      <div class="timeline-title">MFK Makina</div>
+      <div class="timeline-subtitle">Stajyer Mühendis</div>
+    </div>
 
-Endüstriyel Tasarım Mühendisliği, Lisans
+    <div class="timeline-item">
+      <div class="timeline-period">Temmuz 2018</div>
+      <div class="timeline-title">Özben Savunma</div>
+      <div class="timeline-subtitle">Stajyer Mühendis</div>
+    </div>
 
-------------------------------------------------------------------------
+  </div>
+</section>
 
-## Deneyim
+<!-- ========== SERTİFİKALAR ========== -->
+<section class="section-wrap">
+  <span class="section-label">03 — Sertifikalar</span>
+  <h2 class="section-title">Profesyonel sertifikalar</h2>
 
-**Tripy Mobility Teknoloji A.Ş.**
+  <div class="cert-grid">
+    <div class="cert-item">PMI Onaylı PMP® Sertifikası Eğitimi</div>
+    <div class="cert-item">Google UX Design Sertifikası</div>
+    <div class="cert-item">Google AI Essentials Sertifikası</div>
+    <div class="cert-item">İHA-2 Pilotluk Lisansı</div>
+    <div class="cert-item">AS 9100: Havacılık / Savunma</div>
+    <div class="cert-item">IATF 16949: Otomotiv Kalite</div>
+  </div>
+</section>
 
-*Ekim 2022 - Devam Ediyor*
+<!-- ========== YETKİNLİKLER ========== -->
+<section class="section-wrap">
+  <span class="section-label">04 — Yetkinlikler</span>
+  <h2 class="section-title">Uzmanlık alanları</h2>
 
-Proje Mühendisi
+  <div class="skill-grid">
+    <div class="skill-item">Uçtan uca ürün yönetimi</div>
+    <div class="skill-item">Kapsam, değişim ve risk yönetimi</div>
+    <div class="skill-item">Zaman ve maliyet planlaması</div>
+    <div class="skill-item">Ürün geliştirme ve üretim takibi</div>
+    <div class="skill-item">Çevik ve hibrit proje yönetimi</div>
+    <div class="skill-item">Saha operasyonu ve test süreçleri</div>
+    <div class="skill-item">Paydaş katılımı ve iletişim yönetimi</div>
+  </div>
+</section>
 
-**MİA Teknoloji A.Ş.**
+<!-- ========== PROGRAM BİLGİSİ — İKONLU ========== -->
+<section class="section-wrap">
+  <span class="section-label">05 — Yazılım</span>
+  <h2 class="section-title">Kullandığım programlar</h2>
 
-*Haziran 2020 - Ekim 2022*
+  <div class="software-grid">
+    <div class="software-item">
+      <img src="assets/icons/office.png" alt="Microsoft Office">
+      Microsoft Office
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/autocad.png" alt="AutoCAD">
+      AutoCAD
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/figma.png" alt="Figma">
+      Figma
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/fusion360.png" alt="Fusion 360">
+      Fusion 360
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/jira.png" alt="Jira">
+      Jira
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/solidworks.png" alt="SolidWorks">
+      SolidWorks
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/msproject.png" alt="MS Project">
+      MS Project
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/catia.png" alt="Catia">
+      Catia
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/photoshop.png" alt="Photoshop">
+      Photoshop
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/illustrator.png" alt="Illustrator">
+      Illustrator
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/inventor.png" alt="Inventor">
+      Inventor
+    </div>
+    <div class="software-item">
+      <img src="assets/icons/siemens-nx.png" alt="Siemens NX">
+      Siemens NX
+    </div>
+  </div>
+</section>
 
-Endüstriyel Tasarım Mühendisi
-
-**MFK Makina**
-
-*Temmuz 2019*
-
-Stajyer Mühendis
-
-**Özben Savunma**
-
-*Temmuz 2018*
-
-Stajyer Mühendis
-
-------------------------------------------------------------------------
-
-## Sertifikalar
-
--   PMI Onaylı PMP® Sertifikası Eğitimi
-
--   Google UX Design Sertifikası
-
--   Google AI Essentials Sertifikası
-
--   İHA-2 Pilotluk Lisansı
-
--   AS 9100: Havacılık/Savunma Standartları
-
--   IATF 16949: Otomotiv Kalite Standartları
-
-------------------------------------------------------------------------
-
-## Yetkinlikler
-
--   Uçtan Uca Ürün Yönetimi
-
--   Kapsam, Değişim ve Risk Yönetimi
-
--   Zaman ve Maliyet Planlaması
-
--   Ürün Geliştirme ve Üretim Takibi
-
--   Çevik ve Hibrit Proje Yönetimi
-
--   Saha Operasyonu ve Test Süreçleri
-
--   Paydaş Katılımı ve İletişim Yönetimi
-
-------------------------------------------------------------------------
-
-## Program Bilgisi
-
-|  |  |
-|:-----------------------------------|:-----------------------------------|
-| ![](assets/icons/office.png){width="32"} Microsoft Office | ![](assets/icons/autocad.png){width="32"} AutoCAD |
-|  |  |
-| ![](assets/icons/figma.png){width="32"} Figma | ![](assets/icons/fusion360.png){width="32"} Fusion 360 |
-|  |  |
-| ![](assets/icons/jira.png){width="32"} Jira | ![](assets/icons/solidworks.png){width="32"} SolidWorks |
-|  |  |
-| ![](assets/icons/msproject.png){width="32"} MS Project | ![](assets/icons/catia.png){width="32"} Catia |
-|  |  |
-| ![](assets/icons/photoshop.png){width="32"} Photoshop | ![](assets/icons/illustrator.png){width="32"} Illustrator |
-|  |  |
-| ![](assets/icons/inventor.png){width="32"} Inventor | ![](assets/icons/siemens-nx.png){width="32"} Siemens NX |
+<!-- ========== CTA ========== -->
+<section class="cta-band">
+  <h2 class="cta-title">Birlikte çalışmaya açığım</h2>
+  <p class="cta-subtitle">
+    Proje yönetimi, ürün geliştirme veya veri analitiği konularında iletişime geçebilirsin.
+  </p>
+  <div class="cta-actions">
+    <a href="mailto:mirac.beltekin@gmail.com" class="btn-bogaz">
+      mirac.beltekin@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/miracbeltekin" class="btn-ghost" target="_blank">
+      LinkedIn
+    </a>
+  </div>
+</section>
+```

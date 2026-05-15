@@ -1,0 +1,1453 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// ============================================
+// PALET — LIGHT
+// ============================================
+$bogaz-mavi:        #1E6FB0;
+$bogaz-mavi-light:  #4DABF7;
+$bogaz-mavi-soft:   #E7F1FA;
+
+$bg-primary:        #FFFFFF;
+$bg-secondary:      #F7F8FA;
+$bg-tertiary:       #EEF0F3;
+
+$text-primary:      #0E1318;
+$text-secondary:    #5A6371;
+$text-tertiary:     #8B92A0;
+
+$border-soft:       rgba(14, 19, 24, 0.08);
+$border-medium:     rgba(14, 19, 24, 0.14);
+
+$primary:           $bogaz-mavi;
+$body-bg:           $bg-primary;
+$body-color:        $text-primary;
+$link-color:        $bogaz-mavi;
+$link-hover-color:  darken($bogaz-mavi, 10%);
+$border-radius:     8px;
+$border-radius-sm:  6px;
+$border-radius-lg:  12px;
+
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+$font-family-monospace:  'JetBrains Mono', ui-monospace, monospace;
+
+$navbar-padding-y: 0.85rem;
+
+
+/*-- scss:rules --*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: "cv11", "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+  background-color: $bg-primary;
+  color: $text-primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: $text-primary;
+}
+
+p { color: $text-secondary; }
+
+::selection {
+  background-color: $bogaz-mavi;
+  color: white;
+}
+
+// ============================================
+// NAVBAR — premium, ince, blurlu
+// ============================================
+.navbar {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid $border-soft;
+  box-shadow: none;
+  min-height: 64px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  color: $text-primary !important;
+  letter-spacing: -0.01em;
+}
+
+.navbar .nav-link {
+  color: $text-secondary !important;
+  font-size: 0.9rem !important;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  color: $text-primary !important;
+  background-color: $bg-secondary;
+}
+
+.navbar .nav-link.active {
+  color: $bogaz-mavi !important;
+  background-color: $bogaz-mavi-soft;
+}
+
+// Navbar TÜM ikonlar (github, linkedin, dark toggle, search) — görünür yap
+.navbar .quarto-navbar-tools a,
+.navbar .quarto-navbar-tools button,
+.navbar .quarto-color-scheme-toggle,
+.navbar .aa-DetachedSearchButton,
+.navbar [aria-label*="search"],
+.navbar [aria-label*="Search"],
+.navbar [aria-label*="theme"],
+.navbar [aria-label*="Toggle"] {
+  color: $text-secondary !important;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.navbar .quarto-navbar-tools a:hover,
+.navbar .quarto-navbar-tools button:hover,
+.navbar .quarto-color-scheme-toggle:hover,
+.navbar .aa-DetachedSearchButton:hover {
+  color: $bogaz-mavi !important;
+  opacity: 1;
+}
+
+// Bootstrap icon (SVG path) renkleri
+.navbar .bi,
+.navbar svg {
+  width: 18px;
+  height: 18px;
+  color: $text-secondary;
+  fill: currentColor;
+}
+
+.navbar a:hover .bi,
+.navbar a:hover svg,
+.navbar button:hover .bi,
+.navbar button:hover svg {
+  color: $bogaz-mavi;
+}
+
+// ============================================
+// LİNK
+// ============================================
+a {
+  color: $bogaz-mavi;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: darken($bogaz-mavi, 12%);
+}
+
+// ============================================
+// HERO — premium, glow, grid pattern
+// ============================================
+.hero-wrap {
+  position: relative;
+  padding: 6rem 1.5rem 5rem;
+  overflow: hidden;
+  border-bottom: 1px solid $border-soft;
+  margin-bottom: 4rem;
+
+  // Subtle grid pattern arka plan
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(14, 19, 24, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 19, 24, 0.025) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center;
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 30%, transparent 80%);
+    pointer-events: none;
+  }
+
+  // Aurora glow
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(77, 171, 247, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: $bogaz-mavi;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: $bogaz-mavi-soft;
+  border-radius: 20px;
+  border: 1px solid rgba(30, 111, 176, 0.18);
+
+  .hero-label-dot {
+    width: 6px;
+    height: 6px;
+    background-color: $bogaz-mavi;
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+  color: $text-primary;
+  background: linear-gradient(180deg, $text-primary 0%, lighten($text-primary, 25%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: $text-secondary;
+  max-width: 640px;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// ============================================
+// BUTON
+// ============================================
+.btn-primary,
+.btn-bogaz {
+  background-color: $text-primary !important;
+  border: 1px solid $text-primary !important;
+  color: white !important;
+  font-weight: 500;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.btn-primary:hover,
+.btn-bogaz:hover {
+  background-color: lighten($text-primary, 10%) !important;
+  border-color: lighten($text-primary, 10%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14, 19, 24, 0.15);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 1px solid $border-medium;
+  color: $text-primary;
+  font-weight: 500;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  background-color: $bg-secondary;
+  border-color: $text-primary;
+  color: $text-primary;
+  transform: translateY(-1px);
+}
+
+// ============================================
+// KPI GRID — animasyonlu sayılar için
+// ============================================
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.kpi-card {
+  background: linear-gradient(180deg, $bg-primary 0%, $bg-secondary 100%);
+  border: 1px solid $border-soft;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(77, 171, 247, 0.04) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: rgba(30, 111, 176, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(14, 19, 24, 0.08);
+
+    &::after { opacity: 1; }
+  }
+}
+
+.kpi-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $text-tertiary;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.kpi-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: $text-primary;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-delta {
+  font-size: 0.85rem;
+  color: $text-secondary;
+  font-weight: 500;
+}
+
+// ============================================
+// SECTION
+// ============================================
+.section-wrap {
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: $bogaz-mavi;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+  color: $text-primary;
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  color: $text-secondary;
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+// ============================================
+// BENTO GRID — premium card layout
+// ============================================
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-card {
+  background-color: $bg-primary;
+  border: 1px solid $border-soft;
+  border-radius: 14px;
+  padding: 1.75rem;
+  text-decoration: none;
+  color: $text-primary;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $bogaz-mavi-soft 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: rgba(30, 111, 176, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(14, 19, 24, 0.08);
+    color: $text-primary;
+
+    &::before { opacity: 1; }
+
+    .bento-arrow {
+      transform: translateX(4px);
+      color: $bogaz-mavi;
+    }
+  }
+
+  // Span helpers
+  &.span-2 { grid-column: span 2; }
+  &.span-row-2 { grid-row: span 2; }
+
+  @media (max-width: 768px) {
+    &.span-2, &.span-row-2 {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+}
+
+.bento-card-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $bogaz-mavi;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-card-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-card-desc {
+  font-size: 0.92rem;
+  color: $text-secondary;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: $text-tertiary;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-arrow {
+  color: $text-tertiary;
+  transition: all 0.25s ease;
+  font-size: 1.1rem;
+}
+
+// Featured card — büyük, vurgu
+.bento-card.featured {
+  background: linear-gradient(135deg, #0E1318 0%, #1A2530 100%);
+  border-color: transparent;
+  color: white;
+
+  .bento-card-label { color: $bogaz-mavi-light; }
+  .bento-card-title { color: white; }
+  .bento-card-desc { color: rgba(255, 255, 255, 0.7); }
+  .bento-card-footer { color: rgba(255, 255, 255, 0.5); }
+
+  &::before {
+    background: radial-gradient(circle at top right, rgba(77, 171, 247, 0.2) 0%, transparent 70%);
+    opacity: 1;
+  }
+
+  &:hover {
+    border-color: rgba(77, 171, 247, 0.4);
+    color: white;
+  }
+}
+
+// ============================================
+// MARQUEE — kayar logo şeridi
+// ============================================
+.marquee-wrap {
+  margin: 5rem 0;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+  border-top: 1px solid $border-soft;
+  border-bottom: 1px solid $border-soft;
+  background-color: $bg-secondary;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(90deg, $bg-secondary 0%, transparent 100%);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(-90deg, $bg-secondary 0%, transparent 100%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: $text-tertiary;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  &::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: $text-tertiary;
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+// ============================================
+// CTA BAND
+// ============================================
+.cta-band {
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, $bg-secondary 0%, #FFFFFF 100%);
+  border: 1px solid $border-soft;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, $bogaz-mavi-soft 0%, transparent 50%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  > * { position: relative; z-index: 1; }
+}
+
+.cta-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+  color: $text-primary;
+}
+
+.cta-subtitle {
+  color: $text-secondary;
+  margin-bottom: 1.75rem;
+  font-size: 1rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// ============================================
+// İMAJ + KOD
+// ============================================
+img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+  background-color: $bg-secondary;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: $text-primary;
+}
+
+pre {
+  background-color: $bg-secondary !important;
+  border: 1px solid $border-soft;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $border-soft;
+  margin: 2.5rem 0;
+}
+
+// ============================================
+// FOOTER
+// ============================================
+.nav-footer {
+  background-color: $bg-secondary;
+  border-top: 1px solid $border-soft;
+  color: $text-tertiary;
+  font-size: 0.85rem;
+  padding: 1.5rem 0;
+}
+
+main.content {
+  padding-top: 0;
+  padding-bottom: 4rem;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+
+.page-columns,
+#quarto-document-content {
+  max-width: 100%;
+  padding: 0;
+}
+
+// ============================================
+// FADE-IN animasyon
+// ============================================
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.fade-in-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+// ============================================
+// ABOUT — Profil başlığı (mini hero)
+// ============================================
+.profile-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+  border-bottom: 1px solid $border-soft;
+  margin-bottom: 4rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(77, 171, 247, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * { position: relative; z-index: 1; }
+}
+
+.profile-role-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: $bogaz-mavi;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  background-color: $bogaz-mavi-soft;
+  border-radius: 20px;
+  border: 1px solid rgba(30, 111, 176, 0.18);
+}
+
+// ============================================
+// PROFİL FOTOĞRAFI
+// ============================================
+.profile-photo-wrap {
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid $bg-primary;
+  box-shadow:
+    0 0 0 1px $border-medium,
+    0 12px 32px rgba(14, 19, 24, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 2px $bogaz-mavi,
+    0 16px 40px rgba(30, 111, 176, 0.2);
+}
+
+.profile-name {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: $text-primary;
+}
+
+.profile-tagline {
+  font-size: 1.15rem;
+  color: $text-secondary;
+  margin-bottom: 1.5rem;
+}
+
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.9rem;
+  color: $text-tertiary;
+}
+
+.profile-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.profile-meta-item a {
+  color: $text-secondary;
+  font-weight: 500;
+}
+
+.profile-meta-item a:hover { color: $bogaz-mavi; }
+
+// ============================================
+// TIMELINE — Eğitim & Deneyim
+// ============================================
+.timeline {
+  position: relative;
+  padding-left: 1.75rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, $border-medium 0%, $border-soft 100%);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: $bg-primary;
+  border: 1px solid $border-soft;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 1.5rem;
+    width: 13px;
+    height: 13px;
+    background-color: $bg-primary;
+    border: 2px solid $bogaz-mavi;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+  }
+
+  &:hover {
+    border-color: rgba(30, 111, 176, 0.25);
+    transform: translateX(2px);
+    box-shadow: 0 8px 24px rgba(14, 19, 24, 0.06);
+
+    &::before {
+      background-color: $bogaz-mavi;
+      box-shadow: 0 0 0 4px $bogaz-mavi-soft;
+    }
+  }
+}
+
+.timeline-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: $bogaz-mavi;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.015em;
+}
+
+.timeline-subtitle {
+  font-size: 0.92rem;
+  color: $text-secondary;
+  font-weight: 400;
+}
+
+// ============================================
+// SERTİFİKA GRID
+// ============================================
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  background-color: $bg-primary;
+  border: 1px solid $border-soft;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  font-size: 0.92rem;
+  color: $text-primary;
+  font-weight: 500;
+  line-height: 1.4;
+
+  &::before {
+    content: '✓';
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bogaz-mavi-soft;
+    color: $bogaz-mavi;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  &:hover {
+    border-color: rgba(30, 111, 176, 0.25);
+    background-color: $bg-secondary;
+    transform: translateY(-1px);
+  }
+}
+
+// ============================================
+// YETKİNLİK LİSTESİ
+// ============================================
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  background-color: $bg-secondary;
+  border: 1px solid $border-soft;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: $text-primary;
+  transition: all 0.2s ease;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: $bogaz-mavi;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: $bg-primary;
+    border-color: rgba(30, 111, 176, 0.2);
+    transform: translateX(2px);
+  }
+}
+
+// ============================================
+// YAZILIM / PROGRAM GRID — İkonlu kart
+// ============================================
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.software-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.1rem 0.75rem;
+  background-color: $bg-secondary;
+  border: 1px solid $border-soft;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: $text-secondary;
+  letter-spacing: -0.005em;
+  transition: all 0.25s ease;
+  text-align: center;
+
+  img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+    border-radius: 0;
+  }
+
+  &:hover {
+    background-color: $bogaz-mavi-soft;
+    border-color: $bogaz-mavi;
+    color: $bogaz-mavi;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 111, 176, 0.1);
+
+    img { transform: scale(1.1); }
+  }
+}
+
+// ============================================
+// PORTFOLYO — ödev kartları
+// ============================================
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background-color: $bg-primary;
+  border: 1px solid $border-soft;
+  border-radius: 14px;
+  text-decoration: none;
+  color: $text-primary;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, $bogaz-mavi-soft 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: rgba(30, 111, 176, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(14, 19, 24, 0.08);
+    color: $text-primary;
+
+    &::before { opacity: 1; }
+
+    .portfolio-arrow {
+      transform: translateX(4px);
+      color: $bogaz-mavi;
+    }
+  }
+
+  > * { position: relative; z-index: 1; }
+}
+
+.portfolio-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.portfolio-card-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: $bogaz-mavi;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-card-status {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  background-color: $bogaz-mavi-soft;
+  color: $bogaz-mavi;
+  border: 1px solid rgba(30, 111, 176, 0.18);
+}
+
+.portfolio-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $text-primary;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-card-desc {
+  font-size: 0.92rem;
+  color: $text-secondary;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.portfolio-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: $text-tertiary;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.portfolio-arrow {
+  color: $text-tertiary;
+  transition: all 0.25s ease;
+  font-size: 1.1rem;
+}
+
+// ============================================
+// PORTFOLYO — boş yer tutucu (placeholder card)
+// ============================================
+.portfolio-card.placeholder {
+  background-color: transparent;
+  border: 1px dashed $border-medium;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $text-tertiary;
+  cursor: default;
+  min-height: 180px;
+
+  &:hover {
+    border-color: $border-medium;
+    transform: none;
+    box-shadow: none;
+    color: $text-tertiary;
+
+    &::before { opacity: 0; }
+  }
+
+  .placeholder-icon {
+    font-size: 1.5rem;
+    color: $text-tertiary;
+    margin-bottom: 0.5rem;
+    opacity: 0.6;
+  }
+
+  .placeholder-text {
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: $text-tertiary;
+  }
+}
+
+// ============================================
+// PROJE SAYFASI — ek stiller
+// ============================================
+
+// Veri kaynağı kartı (link verir, dış kaynağa)
+.data-source-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background-color: $bg-primary;
+  border: 1px solid $border-soft;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: $text-primary;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: rgba(30, 111, 176, 0.25);
+    background-color: $bg-secondary;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(14, 19, 24, 0.05);
+    color: $text-primary;
+
+    .data-source-arrow {
+      transform: translate(2px, -2px);
+      color: $bogaz-mavi;
+    }
+  }
+}
+
+.data-source-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.data-source-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $bogaz-mavi;
+  font-weight: 600;
+}
+
+.data-source-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.data-source-meta {
+  font-size: 0.82rem;
+  color: $text-tertiary;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.data-source-arrow {
+  color: $text-tertiary;
+  font-size: 1.2rem;
+  transition: all 0.25s ease;
+}
+
+// Soru listesi (proje konusu altında ne sormak istiyoruz)
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.question-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background-color: $bg-secondary;
+  border: 1px solid $border-soft;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $bg-primary;
+    border-color: rgba(30, 111, 176, 0.2);
+    transform: translateX(2px);
+  }
+}
+
+.question-num {
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: $bogaz-mavi;
+  font-weight: 600;
+  min-width: 28px;
+  padding-top: 0.1rem;
+}
+
+.question-text {
+  font-size: 0.95rem;
+  color: $text-primary;
+  line-height: 1.55;
+}
+
+// Yöntem etiketleri (R, dplyr, ggplot2 vb. teknoloji rozetleri)
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0 2rem;
+}
+
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background-color: $bg-secondary;
+  border: 1px solid $border-soft;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: $text-secondary;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $bogaz-mavi-soft;
+    border-color: $bogaz-mavi;
+    color: $bogaz-mavi;
+  }
+}
+
+// Bulgu/sonuç kartı — sayfanın sonunda gösterilebilir, içine analiz sonrası eklenebilir
+.finding-card {
+  padding: 1.5rem 1.75rem;
+  background-color: $bg-primary;
+  border: 1px solid $border-soft;
+  border-left: 3px solid $bogaz-mavi;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background-color: $bg-secondary;
+    transform: translateX(2px);
+  }
+}
+
+.finding-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.finding-desc {
+  font-size: 0.92rem;
+  color: $text-secondary;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// Devam ediyor durumu — sayfa başında banner
+.status-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding: 0.85rem 1.25rem;
+  background-color: $bogaz-mavi-soft;
+  border: 1px solid rgba(30, 111, 176, 0.18);
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: $bogaz-mavi;
+  font-weight: 500;
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: $bogaz-mavi;
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+}
+
+// ============================================
+// PROFİL META — ikonlu
+// ============================================
+.profile-meta-item img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  border-radius: 0;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+// ============================================
+// NAVBAR İKON GARANTİSİ — search + theme toggle
+// ============================================
+// Quarto Bootstrap Icons'ı dahili kullanır, garantili rendering için
+.navbar .bi {
+  display: inline-block !important;
+  width: 18px !important;
+  height: 18px !important;
+  vertical-align: middle;
+  color: $text-secondary !important;
+  fill: currentColor !important;
+}
+
+// Search butonu için özel
+.navbar .aa-DetachedSearchButton,
+.navbar .quarto-search,
+.navbar [class*="search"] {
+  color: $text-secondary !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.navbar .aa-DetachedSearchButton .bi,
+.navbar .quarto-search .bi {
+  color: $text-secondary !important;
+  opacity: 1 !important;
+}
+
+// Theme toggle butonu
+.navbar .quarto-color-scheme-toggle,
+.navbar a[class*="color-scheme"],
+.navbar button[class*="color-scheme"] {
+  color: $text-secondary !important;
+  opacity: 1 !important;
+}
+
+.navbar .quarto-color-scheme-toggle .bi,
+.navbar a[class*="color-scheme"] .bi,
+.navbar button[class*="color-scheme"] .bi {
+  color: $text-secondary !important;
+  opacity: 1 !important;
+}
+
+// Hover'da hepsi mavi
+.navbar .aa-DetachedSearchButton:hover,
+.navbar .quarto-search:hover,
+.navbar .quarto-color-scheme-toggle:hover {
+  color: $bogaz-mavi !important;
+}
+
+.navbar .aa-DetachedSearchButton:hover .bi,
+.navbar .quarto-search:hover .bi,
+.navbar .quarto-color-scheme-toggle:hover .bi {
+  color: $bogaz-mavi !important;
+}
