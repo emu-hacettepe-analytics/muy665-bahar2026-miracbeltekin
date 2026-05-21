@@ -2,9 +2,14 @@
 title: ""
 pagetitle: "Proje — İstanbul Deniz İskeleleri Yolcu Analizi"
 page-layout: full
-toc: false
+toc: true
+toc-location: right
+toc-title: "İçindekiler"
 format:
   html:
+    code-fold: true
+    code-summary: "Kodu göster"
+    code-tools: true
     include-in-header:
       text: |
         <style>
@@ -13,11 +18,110 @@ format:
         </style>
 ---
 
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(scales)
+library(knitr)
+
+normalize_tr <- function(x) {
+  x <- str_to_upper(x, locale = "tr")
+  x <- gsub("\u0130", "I", x)
+  x <- gsub("\u015E", "S", x)
+  x <- gsub("\u011E", "G", x)
+  x <- gsub("\u00DC", "U", x)
+  x <- gsub("\u00D6", "O", x)
+  x <- gsub("\u00C7", "C", x)
+  str_squish(x)
+}
+
+pretty_name <- function(x) {
+  str_to_title(str_to_lower(x, locale = "tr"), locale = "tr")
+}
+
+bogaz_mavi <- "#1E6FB0"
+bogaz_acik <- "#4DABF7"
+bogaz_gri  <- "#8B92A0"
+
+tema_mirac <- function() {
+  theme_minimal(base_size = 13) +
+    theme(
+      plot.title       = element_text(face = "bold", size = 15, color = "#0E1318"),
+      plot.subtitle    = element_text(size = 12, color = "#5A6371", margin = margin(b = 12)),
+      plot.background   = element_rect(fill = "white", color = NA),
+      panel.background  = element_rect(fill = "white", color = NA),
+      panel.grid.minor  = element_blank(),
+      panel.grid.major  = element_line(color = "#EEF0F3", linewidth = 0.5),
+      axis.title        = element_text(color = "#5A6371", size = 11),
+      axis.text         = element_text(color = "#5A6371"),
+      legend.position   = "top",
+      legend.title      = element_text(color = "#5A6371", size = 11),
+      legend.text       = element_text(color = "#5A6371", size = 10),
+      plot.margin       = margin(15, 15, 15, 15)
+    )
+}
+```
+
+```{r}
+#| label: veri-okuma
+#| include: false
+
+veri_2024 <- read_csv(
+  "data/2024-yl-istanbul-deniz-iskeleleri-yolcu-saylar.csv",
+  locale = locale(encoding = "UTF-8"),
+  show_col_types = FALSE
+)
+
+veri_2025 <- read_delim(
+  "data/2025-yl-istanbul-deniz-iskeleleri-yolcu-saylar.csv",
+  delim = ";",
+  locale = locale(encoding = "UTF-8"),
+  show_col_types = FALSE
+)
+
+veri_2025 <- veri_2025 |>
+  rename(toplam_yolculuk_sayisi = yolcu_sayisi)
+
+veri_ham <- bind_rows(veri_2024, veri_2025)
+
+veri <- veri_ham |>
+  filter(!is.na(istasyon_adi), str_squish(istasyon_adi) != "") |>
+  mutate(
+    istasyon_key = normalize_tr(istasyon_adi),
+    istasyon     = pretty_name(istasyon_key),
+    otorite      = str_squish(otorite_adi),
+    tarih        = make_date(yil, ay, 1)
+  ) |>
+  group_by(yil, ay, tarih, otorite, istasyon_key, istasyon) |>
+  summarise(
+    tekil_yolcu_sayisi     = sum(tekil_yolcu_sayisi, na.rm = TRUE),
+    toplam_yolculuk_sayisi = sum(toplam_yolculuk_sayisi, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+veri <- veri |>
+  mutate(
+    operator_kisa = case_when(
+      str_detect(otorite, regex("IBB|TOPLU ULASIM", ignore_case = TRUE)) ~ "İBB Toplu Ulaşım",
+      str_detect(otorite, regex("SEHIR HAT", ignore_case = TRUE))         ~ "Şehir Hatları",
+      str_detect(otorite, regex("TURYOL", ignore_case = TRUE))            ~ "TURYOL",
+      str_detect(otorite, regex("DENTUR", ignore_case = TRUE))            ~ "Dentur Avrasya",
+      str_detect(otorite, regex("MAVI MARMARA", ignore_case = TRUE))      ~ "Mavi Marmara",
+      str_detect(otorite, regex("IDO", ignore_case = TRUE))               ~ "İDO",
+      str_detect(otorite, regex("BEYDEN", ignore_case = TRUE))            ~ "Beyden",
+      str_detect(otorite, regex("KARTAL", ignore_case = TRUE))            ~ "Kartal Koop.",
+      TRUE ~ str_to_title(str_sub(otorite, 1, 20))
+    )
+  )
+```
+
 ```{=html}
 <!-- ========== STATUS BANNER ========== -->
 <div class="status-banner">
   <span class="status-dot"></span>
-  Devam ediyor · MUY665 Bahar 2026 dönem projesi
+  MUY665 Bahar 2026 dönem projesi
 </div>
 
 <!-- ========== PROJE HERO ========== -->
@@ -45,24 +149,24 @@ format:
 <!-- ========== HIZLI KPI ========== -->
 <section class="kpi-grid">
   <div class="kpi-card">
-    <div class="kpi-label">Dönem</div>
-    <div class="kpi-value">24 ay</div>
-    <div class="kpi-delta">2024 – 2025</div>
+    <div class="kpi-label">Toplam yolculuk</div>
+    <div class="kpi-value">~140M</div>
+    <div class="kpi-delta">2024 – 2025 toplamı</div>
   </div>
   <div class="kpi-card">
-    <div class="kpi-label">Veri büyüklüğü</div>
-    <div class="kpi-value">~1.900</div>
-    <div class="kpi-delta">satır · iskele × ay × operatör</div>
+    <div class="kpi-label">Tekil yolcu</div>
+    <div class="kpi-value">~76M</div>
+    <div class="kpi-delta">benzersiz yolcu</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">İskele</div>
+    <div class="kpi-value">61</div>
+    <div class="kpi-delta">benzersiz istasyon</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-label">Operatör</div>
     <div class="kpi-value">8</div>
-    <div class="kpi-delta">İBB, Şehir Hatları, TURYOL...</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-label">İskele</div>
-    <div class="kpi-value">73</div>
-    <div class="kpi-delta">benzersiz istasyon</div>
+    <div class="kpi-delta">deniz ulaşım işletmesi</div>
   </div>
 </section>
 
@@ -77,7 +181,7 @@ format:
   <ul class="question-list">
     <li class="question-item">
       <span class="question-num">Q1</span>
-      <span class="question-text">2024'ten 2025'e iskele bazında yolcu sayıları nasıl değişti? Genel olarak artış mı, azalış mı var?</span>
+      <span class="question-text">2024'ten 2025'e yolcu sayıları nasıl değişti? Genel olarak artış mı, azalış mı var?</span>
     </li>
     <li class="question-item">
       <span class="question-num">Q2</span>
@@ -144,26 +248,48 @@ format:
       <span class="question-text">İlgili ay içinde gerçekleşen toplam yolculuk sayısı (aynı yolcu birden fazla geçiş yapabilir).</span>
     </li>
   </ul>
-
-  <h3 style="margin-top:2.5rem;">Ön işleme</h3>
-  <p>
-    Veri analize hazır hale getirilmeden önce aşağıdaki adımlar uygulanmıştır:
-  </p>
-  <ul>
-    <li>2024 dosyası virgül (<code>,</code>), 2025 dosyası noktalı virgül (<code>;</code>) ile ayrılmıştı; her iki dosya da uygun ayraçla okunmuş, sonra birleştirilmiştir.</li>
-    <li>2025 dosyasındaki <code>yolcu_sayisi</code> sütunu, 2024 ile uyumlu olması için <code>toplam_yolculuk_sayisi</code> olarak yeniden adlandırıldı.</li>
-    <li>İskele adlarındaki tutarsızlıklar (örn. <code>BOSTANCI</code> / <code>Bostancı</code>) standartlaştırıldı.</li>
-    <li>Boş <code>istasyon_adi</code> içeren satırlar filtrelendi.</li>
-    <li>Tarih sütunu, <code>yil</code> ve <code>ay</code> birleştirilerek <code>tarih</code> olarak oluşturuldu.</li>
-  </ul>
 </section>
+```
 
+::: {.section-wrap}
+
+#### Ham veriden örnek satırlar
+
+```{r}
+#| label: veri-onizleme
+
+veri |>
+  arrange(desc(toplam_yolculuk_sayisi)) |>
+  select(yil, ay, istasyon, operator_kisa, tekil_yolcu_sayisi, toplam_yolculuk_sayisi) |>
+  head(8) |>
+  kable(
+    col.names = c("Yıl", "Ay", "İskele", "Operatör", "Tekil Yolcu", "Toplam Yolculuk"),
+    format.args = list(big.mark = ".", decimal.mark = ","),
+    align = "c"
+  )
+```
+
+```{=html}
+<h3 style="margin-top:2.5rem;">Ön işleme</h3>
+<p>Veri analize hazır hale getirilmeden önce aşağıdaki adımlar uygulanmıştır:</p>
+<ul>
+  <li>2024 dosyası virgül (<code>,</code>), 2025 dosyası noktalı virgül (<code>;</code>) ile ayrılmıştı; her iki dosya da uygun ayraçla okunmuş, sonra birleştirilmiştir.</li>
+  <li>2025 dosyasındaki <code>yolcu_sayisi</code> sütunu, 2024 ile uyumlu olması için <code>toplam_yolculuk_sayisi</code> olarak yeniden adlandırıldı.</li>
+  <li>İskele adlarındaki tutarsızlıklar (örn. <code>BESIKTAS</code> / <code>Beşiktaş</code>) Türkçe karakter normalleştirmesiyle standartlaştırıldı; bu işlem benzersiz iskele sayısını 73 ham değerden 61 gerçek istasyona indirdi.</li>
+  <li>Boş <code>istasyon_adi</code> içeren satırlar filtrelendi.</li>
+  <li>Tarih sütunu, <code>yil</code> ve <code>ay</code> birleştirilerek <code>tarih</code> olarak oluşturuldu.</li>
+</ul>
+```
+
+:::
+
+```{=html}
 <!-- ========== YÖNTEM ========== -->
 <section class="section-wrap">
   <span class="section-label">03 — Yöntem</span>
   <h2 class="section-title">Yaklaşım ve araçlar</h2>
   <p class="section-subtitle">
-    Tüm analiz R üzerinde yapılmıştır. Veri okuma, temizleme ve dönüştürme için tidyverse paketleri; görselleştirme için ggplot2 kullanılmıştır. Rapor Quarto ile yeniden üretilebilir biçimde hazırlanmıştır.
+    Tüm analiz R üzerinde yapılmıştır. Veri okuma, temizleme ve dönüştürme için tidyverse paketleri; görselleştirme için ggplot2 kullanılmıştır. Rapor Quarto ile yeniden üretilebilir biçimde hazırlanmıştır. Her grafiğin altındaki "Kodu göster" bağlantısından ilgili R kodu görüntülenebilir.
   </p>
 
   <div class="tech-pills">
@@ -180,46 +306,542 @@ format:
   </div>
 </section>
 
-<!-- ========== SONUÇLAR (henüz boş — analiz sonrası dolacak) ========== -->
-<section class="section-wrap">
-  <span class="section-label">04 — Sonuçlar</span>
+<!-- ========== KEŞİFSEL ANALİZ BAŞLIK ========== -->
+<section class="section-wrap" style="margin-bottom:2rem;">
+  <span class="section-label">04 — Keşifsel Veri Analizi</span>
+  <h2 class="section-title">Veriye genel bakış</h2>
+  <p class="section-subtitle">
+    Araştırma sorularına geçmeden önce, verinin genel dağılımını ve zaman içindeki davranışını anlamak için birkaç keşifsel grafik inceliyorum.
+  </p>
+</section>
+```
+
+::: {.section-wrap}
+
+#### Aylık toplam yolculuğun zaman serisi
+
+```{r}
+#| label: eda-zaman-serisi
+#| fig-width: 9
+#| fig-height: 4
+#| fig-align: center
+
+veri |>
+  group_by(tarih) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  ggplot(aes(x = tarih, y = toplam)) +
+  geom_area(fill = bogaz_acik, alpha = 0.25) +
+  geom_line(color = bogaz_mavi, linewidth = 1) +
+  geom_point(color = bogaz_mavi, size = 1.8) +
+  scale_y_continuous(labels = label_number(scale = 1e-6, suffix = "M")) +
+  scale_x_date(date_breaks = "3 months", date_labels = "%b %y") +
+  labs(
+    title = "Aylık toplam yolculuk (2024 – 2025)",
+    subtitle = "Tüm operatör ve iskeleler birleşik · milyon yolculuk",
+    x = NULL, y = NULL
+  ) +
+  tema_mirac()
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Genel görünüm</div>
+  <p class="finding-desc">
+    İki yıllık seri, deniz ulaşımının istikrarlı ama mevsimsel dalgalı bir yapıda olduğunu gösteriyor. Eğri her yıl yaz aylarında tepe yapıp kışın geri çekiliyor; bu döngüsel davranış, ilerideki mevsimsellik analizinin temelini oluşturuyor.
+  </p>
+</div>
+```
+
+#### Yolculuk büyüklüğünün dağılımı
+
+```{r}
+#| label: eda-dagilim
+#| fig-width: 9
+#| fig-height: 3.8
+#| fig-align: center
+
+veri |>
+  ggplot(aes(x = toplam_yolculuk_sayisi)) +
+  geom_histogram(bins = 40, fill = bogaz_mavi, color = "white", linewidth = 0.2) +
+  scale_x_continuous(labels = label_number(scale = 1e-3, suffix = "K")) +
+  labs(
+    title = "İskele-ay düzeyinde yolculuk sayısının dağılımı",
+    subtitle = "Çoğu kayıt düşük hacimli; az sayıda iskele çok yüksek değer alıyor (sağa çarpık)",
+    x = "Aylık toplam yolculuk", y = "Kayıt sayısı"
+  ) +
+  tema_mirac()
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Dağılım</div>
+  <p class="finding-desc">
+    Dağılım belirgin biçimde sağa çarpık. Kayıtların büyük çoğunluğu düşük yolculuk hacmine sahipken, çok az sayıda iskele (Üsküdar, Beşiktaş gibi) son derece yüksek değerler alıyor. Bu, kentin deniz trafiğinin birkaç merkezde yoğunlaştığının ilk istatistiksel işareti.
+  </p>
+</div>
+```
+
+:::
+
+```{=html}
+<!-- ========== SONUÇLAR BAŞLIK ========== -->
+<section class="section-wrap" style="margin-bottom:2rem;">
+  <span class="section-label">05 — Sonuçlar</span>
   <h2 class="section-title">Bulgular</h2>
   <p class="section-subtitle">
-    Bu bölüm analiz tamamlandıkça her bir araştırma sorusu için elde edilen bulgu ve grafiklerle güncellenecektir.
+    Her araştırma sorusu için elde edilen bulgu, grafik ve yazılı yorum aşağıda sunulmuştur.
+  </p>
+</section>
+```
+
+::: {.section-wrap}
+
+### Q1 — 2024'ten 2025'e yolcu hareketi nasıl değişti?
+
+```{r}
+#| label: q1-yillik
+#| fig-width: 9
+#| fig-height: 4.5
+#| fig-align: center
+
+aylik_yil <- veri |>
+  group_by(yil, ay) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  mutate(yil = factor(yil))
+
+ggplot(aylik_yil, aes(x = ay, y = toplam, color = yil)) +
+  geom_line(linewidth = 1.1) +
+  geom_point(size = 2.2) +
+  scale_x_continuous(breaks = 1:12,
+                     labels = c("Oca","Şub","Mar","Nis","May","Haz",
+                                "Tem","Ağu","Eyl","Eki","Kas","Ara")) +
+  scale_y_continuous(labels = label_number(scale = 1e-6, suffix = "M")) +
+  scale_color_manual(values = c("2024" = bogaz_acik, "2025" = bogaz_mavi)) +
+  labs(
+    title = "Aylık toplam yolculuk: 2024 ve 2025 karşılaştırması",
+    subtitle = "İstanbul deniz iskeleleri · milyon yolculuk",
+    x = NULL, y = NULL, color = "Yıl"
+  ) +
+  tema_mirac()
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    İki yıl neredeyse aynı seyri izliyor: toplam yolculuk 2024'te 69,8 milyon iken 2025'te 70,2 milyona çıkarak yalnızca <strong>%0,6</strong> artmış. Genel hacim sabit, ama bu durağanlık iskele bazında yer değiştiren bir talebi gizliyor — bunu bir sonraki grafikte inceliyorum.
+  </p>
+</div>
+```
+
+#### Q1 devam — En çok büyüyen ve küçülen iskeleler
+
+```{r}
+#| label: q1-degisim
+#| fig-width: 9
+#| fig-height: 5
+#| fig-align: center
+
+degisim <- veri |>
+  group_by(istasyon, yil) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  pivot_wider(names_from = yil, values_from = toplam, names_prefix = "y", values_fill = 0) |>
+  filter(y2024 > 1e6) |>
+  mutate(degisim_pct = 100 * (y2025 - y2024) / y2024) |>
+  arrange(desc(degisim_pct))
+
+degisim_uc <- bind_rows(slice_head(degisim, n = 6), slice_tail(degisim, n = 6))
+
+ggplot(degisim_uc, aes(x = degisim_pct, y = fct_reorder(istasyon, degisim_pct),
+                       fill = degisim_pct > 0)) +
+  geom_col(width = 0.7) +
+  geom_vline(xintercept = 0, color = bogaz_gri, linewidth = 0.4) +
+  scale_fill_manual(values = c("TRUE" = bogaz_mavi, "FALSE" = "#E08A5D"), guide = "none") +
+  labs(
+    title = "2024 → 2025: en çok büyüyen ve küçülen iskeleler",
+    subtitle = "Yıllık yolculuk değişimi (%) · yalnızca 1M+ hacimli iskeleler",
+    x = "Değişim (%)", y = NULL
+  ) +
+  tema_mirac() +
+  theme(panel.grid.major.y = element_blank())
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Toplamda durağan görünen tablonun altında belirgin bir yeniden dağılım var. <strong>Eminönü (+%6,8)</strong> ve <strong>Eminönü–Üsküdar (+%5,8)</strong> hatları yükselirken; Kadıköy çevresindeki hatlar (<strong>Eminönü–Kadıköy −%6,1</strong>, <strong>Kadıköy Çayırbaşı −%5,4</strong>) ve Yeni Kabataş (−%4,4) gerilemiş. Bu, talebin tarihi yarımada (Eminönü) çevresine doğru hafifçe kaydığını düşündürüyor.
+  </p>
+</div>
+```
+
+:::
+
+::: {.section-wrap}
+
+### Q2 — Kentin ana arterleri hangi iskeleler?
+
+```{r}
+#| label: q2-iskele
+#| fig-width: 9
+#| fig-height: 5
+#| fig-align: center
+
+top_iskele <- veri |>
+  group_by(istasyon) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  slice_max(toplam, n = 12)
+
+ggplot(top_iskele, aes(x = toplam, y = fct_reorder(istasyon, toplam))) +
+  geom_col(fill = bogaz_mavi, width = 0.72) +
+  scale_x_continuous(labels = label_number(scale = 1e-6, suffix = "M")) +
+  labs(
+    title = "En yoğun 12 iskele",
+    subtitle = "Toplam yolculuk (2024 + 2025) · milyon",
+    x = NULL, y = NULL
+  ) +
+  tema_mirac() +
+  theme(panel.grid.major.y = element_blank())
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Deniz trafiği birkaç merkezde yoğunlaşıyor. <strong>Üsküdar</strong> 29,4 milyon yolculukla açık ara birinci; ikinci sıradaki <strong>Beşiktaş</strong>'ın (18,2M) yaklaşık 1,6 katı. İlk iki iskele tek başına, en yoğun 12 iskelenin toplamının yarısına yakınını taşıyor. Üsküdar–Beşiktaş–Karaköy üçgeni Boğaz geçişlerinin omurgası; Kadıköy ise birden çok iskeleye (Yeni, Eski, Çayırbaşı) bölünmüş.
+  </p>
+</div>
+```
+
+#### Q2 devam — En yoğun 5 iskelenin zaman içindeki seyri
+
+```{r}
+#| label: q2-trend
+#| fig-width: 9
+#| fig-height: 4.5
+#| fig-align: center
+
+top5_isim <- veri |>
+  group_by(istasyon) |>
+  summarise(t = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  slice_max(t, n = 5) |>
+  pull(istasyon)
+
+veri |>
+  filter(istasyon %in% top5_isim) |>
+  group_by(tarih, istasyon) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  ggplot(aes(x = tarih, y = toplam, color = fct_reorder(istasyon, -toplam))) +
+  geom_line(linewidth = 0.9) +
+  scale_y_continuous(labels = label_number(scale = 1e-6, suffix = "M")) +
+  scale_x_date(date_breaks = "3 months", date_labels = "%b %y") +
+  scale_color_brewer(palette = "Blues", direction = -1) +
+  labs(
+    title = "En yoğun 5 iskelenin aylık seyri",
+    subtitle = "2024 – 2025 · milyon yolculuk",
+    x = NULL, y = NULL, color = NULL
+  ) +
+  tema_mirac()
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Üsküdar tüm dönem boyunca diğerlerinin belirgin biçimde üzerinde seyrediyor ve yazın daha da açılıyor. Beşiktaş ikinci bantta istikrarlı; Karaköy ve Kadıköy iskeleleri ise birbirine yakın, daha düşük bir bantta hareket ediyor. Liderlerin sıralaması yıl boyunca değişmiyor — yani kentin deniz omurgası oturmuş ve kararlı bir yapıda.
+  </p>
+</div>
+```
+
+:::
+
+::: {.section-wrap}
+
+### Q3 — Mevsimsel desen var mı?
+
+```{r}
+#| label: q3-mevsim
+#| fig-width: 9
+#| fig-height: 4.5
+#| fig-align: center
+
+aylik <- veri |>
+  group_by(ay) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop")
+
+ggplot(aylik, aes(x = factor(ay), y = toplam)) +
+  geom_col(fill = bogaz_acik, width = 0.78) +
+  geom_hline(yintercept = mean(aylik$toplam), linetype = "dashed",
+             color = bogaz_gri, linewidth = 0.5) +
+  scale_x_discrete(labels = c("Oca","Şub","Mar","Nis","May","Haz",
+                              "Tem","Ağu","Eyl","Eki","Kas","Ara")) +
+  scale_y_continuous(labels = label_number(scale = 1e-6, suffix = "M")) +
+  labs(
+    title = "Aylara göre toplam yolculuk",
+    subtitle = "2024 + 2025 birleşik · kesikli çizgi: aylık ortalama",
+    x = NULL, y = NULL
+  ) +
+  tema_mirac()
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Belirgin bir mevsimsel dalga var. Talep <strong>Haziran'da zirve</strong> yapıyor (13,8M) ve yaz boyu yüksek seyrediyor; en düşük ay <strong>Şubat</strong> (9,2M). Yaz zirvesi ile kış dibi arasında yaklaşık %50 fark var. Bu, deniz hatlarının yalnızca zorunlu ulaşım değil, iyi havalarda tercih edilen bir ulaşım–rekreasyon biçimi de olduğunu düşündürüyor.
+  </p>
+</div>
+```
+
+#### Q3 devam — Yıl × ay ısı haritası
+
+```{r}
+#| label: q3-heatmap
+#| fig-width: 9
+#| fig-height: 3
+#| fig-align: center
+
+veri |>
+  group_by(yil, ay) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  ggplot(aes(x = factor(ay), y = factor(yil), fill = toplam)) +
+  geom_tile(color = "white", linewidth = 1) +
+  scale_x_discrete(labels = c("Oca","Şub","Mar","Nis","May","Haz",
+                              "Tem","Ağu","Eyl","Eki","Kas","Ara")) +
+  scale_fill_gradient(low = "#EAF3FB", high = bogaz_mavi,
+                      labels = label_number(scale = 1e-6, suffix = "M"),
+                      name = NULL) +
+  labs(
+    title = "Yıl × ay ısı haritası",
+    subtitle = "Koyu = yüksek yolculuk · 2025 Şubat dikkat çekici bir dip",
+    x = NULL, y = NULL
+  ) +
+  tema_mirac() +
+  theme(panel.grid.major = element_blank())
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Isı haritası yaz koyuluğunu (Haz–Ağu) iki yılda da net gösteriyor. Bir anomali dikkat çekiyor: <strong>2025 Şubat</strong> (3,8M), 2024 Şubat'ın (5,4M) belirgin altında — kış dibinin alışılmadık derecede derin olduğu bir ay. Bu, hava koşulları veya veri toplamadaki bir kesintiye işaret edebilir; ileri bir incelemeyi hak ediyor.
+  </p>
+</div>
+```
+
+:::
+
+::: {.section-wrap}
+
+### Q4 — Operatörler arasında pazar nasıl paylaşılıyor?
+
+```{r}
+#| label: q4-operator
+#| fig-width: 9
+#| fig-height: 4.5
+#| fig-align: center
+
+op_pay <- veri |>
+  group_by(operator_kisa) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  mutate(pay = toplam / sum(toplam)) |>
+  arrange(desc(toplam))
+
+ggplot(op_pay, aes(x = pay, y = fct_reorder(operator_kisa, pay))) +
+  geom_col(fill = bogaz_mavi, width = 0.7) +
+  geom_text(aes(label = percent(pay, accuracy = 0.1)),
+            hjust = -0.15, size = 3.5, color = "#5A6371") +
+  scale_x_continuous(labels = percent_format(), expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Operatör pazar payı",
+    subtitle = "Toplam yolculuğun yüzdesi (2024 + 2025)",
+    x = NULL, y = NULL
+  ) +
+  tema_mirac() +
+  theme(panel.grid.major.y = element_blank())
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Pazar ikili bir yapı gösteriyor. <strong>İBB Toplu Ulaşım</strong> tek başına yolculukların <strong>%52'sini</strong> taşıyarak kamusal omurgayı oluştururken, özel işletme <strong>Dentur Avrasya %25</strong> ile güçlü bir ikinci aktör. <strong>TURYOL %13</strong> ile onu izliyor. Kalan beş operatör toplamda yalnızca ~%10 pay alıyor. Yani deniz ulaşımı pratikte üç oyuncunun (İBB + Dentur + TURYOL ≈ %90) elinde.
+  </p>
+</div>
+```
+
+#### Q4 devam — Operatörlerin mevsimsel davranışı
+
+```{r}
+#| label: q4-mevsim
+#| fig-width: 9
+#| fig-height: 4.5
+#| fig-align: center
+
+veri |>
+  filter(operator_kisa %in% c("İBB Toplu Ulaşım", "Dentur Avrasya", "TURYOL")) |>
+  mutate(mevsim = case_when(
+    ay %in% c(6, 7, 8)  ~ "Yaz (Haz–Ağu)",
+    ay %in% c(12, 1, 2) ~ "Kış (Ara–Şub)",
+    TRUE ~ "Diğer"
+  )) |>
+  filter(mevsim != "Diğer") |>
+  group_by(operator_kisa, mevsim) |>
+  summarise(toplam = sum(toplam_yolculuk_sayisi), .groups = "drop") |>
+  ggplot(aes(x = operator_kisa, y = toplam, fill = mevsim)) +
+  geom_col(position = "dodge", width = 0.65) +
+  scale_y_continuous(labels = label_number(scale = 1e-6, suffix = "M")) +
+  scale_fill_manual(values = c("Yaz (Haz–Ağu)" = bogaz_mavi, "Kış (Ara–Şub)" = bogaz_acik)) +
+  labs(
+    title = "Büyük operatörlerde yaz – kış karşılaştırması",
+    subtitle = "Toplam yolculuk · milyon",
+    x = NULL, y = NULL, fill = NULL
+  ) +
+  tema_mirac()
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Mevsimsellik operatörlere göre farklılaşıyor. <strong>İBB</strong> yaz aylarında kışa göre çok daha güçlü (21,7M'a karşı 14,7M) — yani mevsimsel dalgayı asıl İBB taşıyor. Buna karşın <strong>Dentur Avrasya</strong> yaz ve kışta neredeyse aynı hacmi koruyor (8,6M'a karşı 8,3M); bu, Dentur'un daha çok düzenli/zorunlu hatlarda çalıştığını, İBB'nin ise rekreasyon ve turizm talebine daha duyarlı olduğunu gösteriyor.
+  </p>
+</div>
+```
+
+:::
+
+::: {.section-wrap}
+
+### Q5 — Tekil yolcu ile toplam yolculuk farkı ne anlatıyor?
+
+```{r}
+#| label: q5-oran
+#| fig-width: 9
+#| fig-height: 5
+#| fig-align: center
+
+oran_df <- veri |>
+  group_by(istasyon) |>
+  summarise(
+    toplam = sum(toplam_yolculuk_sayisi),
+    tekil  = sum(tekil_yolcu_sayisi),
+    .groups = "drop"
+  ) |>
+  filter(toplam > 3e6) |>
+  mutate(oran = toplam / tekil) |>
+  slice_max(oran, n = 12)
+
+ggplot(oran_df, aes(x = oran, y = fct_reorder(istasyon, oran))) +
+  geom_col(fill = bogaz_acik, width = 0.72) +
+  geom_vline(xintercept = 1, linetype = "dotted", color = bogaz_gri) +
+  geom_text(aes(label = number(oran, accuracy = 0.01)),
+            hjust = -0.15, size = 3.3, color = "#5A6371") +
+  scale_x_continuous(expand = expansion(mult = c(0, 0.12))) +
+  labs(
+    title = "Yolculuk / tekil yolcu oranı (yüksek hacimli iskeleler)",
+    subtitle = "Oran ne kadar yüksekse, aynı yolcu o iskeleyi o kadar çok kez kullanıyor",
+    x = "Kişi başına yolculuk sayısı", y = NULL
+  ) +
+  tema_mirac() +
+  theme(panel.grid.major.y = element_blank())
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">Bulgu</div>
+  <p class="finding-desc">
+    Bu oran bir iskelenin "sadık" mı yoksa "geçişlik" mi olduğunu gösteriyor. <strong>Beşiktaş ve Yeni Kabataş</strong> (~2,0) başı çekiyor: aynı yolcu bu iskeleleri ortalama iki kez kullanıyor — düzenli komüterlere işaret. <strong>Üsküdar</strong> hem en yüksek hacme hem yüksek orana (1,96) sahip; yani hem çok yolcu çekiyor hem de düzenli kullanıcılar. Eminönü gibi turistik–karma iskelelerde oran 1,6 civarında: daha çeşitli ama daha az tekrar eden profil.
+  </p>
+</div>
+```
+
+#### Q5 devam — Tekil yolcu ve toplam yolculuk ilişkisi
+
+```{r}
+#| label: q5-korelasyon
+#| fig-width: 9
+#| fig-height: 5
+#| fig-align: center
+
+kor_deger <- cor(veri$tekil_yolcu_sayisi, veri$toplam_yolculuk_sayisi)
+
+veri |>
+  ggplot(aes(x = tekil_yolcu_sayisi, y = toplam_yolculuk_sayisi)) +
+  geom_point(color = bogaz_mavi, alpha = 0.35, size = 1.8) +
+  geom_smooth(method = "lm", color = "#E08A5D", se = FALSE, linewidth = 0.9) +
+  scale_x_continuous(labels = label_number(scale = 1e-3, suffix = "K")) +
+  scale_y_continuous(labels = label_number(scale = 1e-3, suffix = "K")) +
+  labs(
+    title = "Tekil yolcu ve toplam yolculuk ilişkisi",
+    subtitle = paste0("Her nokta bir iskele-ay · Pearson r = ", round(kor_deger, 3)),
+    x = "Tekil yolcu sayısı", y = "Toplam yolculuk sayısı"
+  ) +
+  tema_mirac()
+```
+
+```{=html}
+<div class="finding-card">
+  <div class="finding-title">İstatistiksel bulgu</div>
+  <p class="finding-desc">
+    İki değişken arasında <strong>çok güçlü pozitif doğrusal ilişki</strong> var: Pearson korelasyon katsayısı <strong>r = 0,984</strong>. Bu, bir iskeledeki tekil yolcu sayısının, toplam yolculuğu neredeyse tam olarak açıkladığını gösteriyor. Yani genel kullanım örüntüsü tutarlı; iskeleler arasındaki fark "kaç kişinin kullandığı"ndan kaynaklanıyor, "ne kadar tekrar kullanıldığı"ndan değil. Önceki grafikteki oran farkları (1,5 – 2,0) bu güçlü ilişkinin etrafındaki ince sapmalardır.
+  </p>
+</div>
+```
+
+:::
+
+```{=html}
+<!-- ========== GENEL DEĞERLENDİRME ========== -->
+<section class="section-wrap">
+  <span class="section-label">06 — Genel Değerlendirme</span>
+  <h2 class="section-title">Öne çıkan sonuçlar</h2>
+  <p class="section-subtitle">
+    Analiz boyunca elde edilen başlıca bulgular:
   </p>
 
   <div class="finding-card">
-    <div class="finding-title">Q1 – Yıllar arası değişim</div>
-    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+    <div class="finding-title">1 · Hacim sabit, dağılım hareketli</div>
+    <p class="finding-desc">Toplam yolculuk 2024'ten 2025'e yalnızca %0,6 arttı; ancak iskele bazında Eminönü çevresi büyürken Kadıköy hatları geriledi.</p>
   </div>
-
   <div class="finding-card">
-    <div class="finding-title">Q2 – En yoğun iskeleler</div>
-    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+    <div class="finding-title">2 · Birkaç iskele kentin omurgası</div>
+    <p class="finding-desc">Üsküdar ve Beşiktaş tek başlarına trafiğin büyük kısmını taşıyor; deniz ulaşımı coğrafi olarak yoğunlaşmış.</p>
   </div>
-
   <div class="finding-card">
-    <div class="finding-title">Q3 – Mevsimsel desen</div>
-    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+    <div class="finding-title">3 · Güçlü mevsimsellik</div>
+    <p class="finding-desc">Yaz zirvesi (Haziran) ile kış dibi (Şubat) arasında ~%50 fark var; bu dalgayı asıl İBB taşıyor, Dentur ise mevsime dirençli.</p>
   </div>
-
   <div class="finding-card">
-    <div class="finding-title">Q4 – Operatör pazar payı</div>
-    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+    <div class="finding-title">4 · Pazar üç oyunculu</div>
+    <p class="finding-desc">İBB %52, Dentur %25, TURYOL %13 — üç işletme toplam trafiğin ~%90'ını oluşturuyor.</p>
   </div>
-
   <div class="finding-card">
-    <div class="finding-title">Q5 – Tekil yolcu vs. toplam yolculuk</div>
-    <p class="finding-desc">Analiz sonrası eklenecek.</p>
+    <div class="finding-title">5 · Tutarlı kullanım örüntüsü</div>
+    <p class="finding-desc">Tekil yolcu ile toplam yolculuk arasındaki korelasyon r = 0,984; yani kullanım davranışı tüm iskelelerde tutarlı.</p>
   </div>
 </section>
 
-<!-- ========== HAKKINDA / NOTLAR ========== -->
+<!-- ========== NOTLAR ========== -->
 <section class="section-wrap">
-  <span class="section-label">05 — Notlar</span>
+  <span class="section-label">07 — Notlar</span>
   <h2 class="section-title">Çalışma hakkında</h2>
   <p class="section-subtitle">
-    Bu proje, Hacettepe Üniversitesi Mühendislik Yönetimi Yüksek Lisans programındaki MUY665 — İş Analitiği dersi (Bahar 2026) kapsamında, Dr. Erdi Daşdemir danışmanlığında bireysel olarak hazırlanmaktadır.
+    Bu proje, Hacettepe Üniversitesi Mühendislik Yönetimi Yüksek Lisans programındaki MUY665 — İş Analitiği dersi (Bahar 2026) kapsamında, Dr. Erdi Daşdemir danışmanlığında bireysel olarak hazırlanmıştır. Tüm kod ve veri, sayfanın başındaki GitHub bağlantısından erişilebilir; rapor Quarto ile yeniden üretilebilir biçimde oluşturulmuştur.
   </p>
+</section>
+<!-- ========== AI BEYANI ========== -->
+<section class="section-wrap">
+  <span class="section-label">08 — Yapay Zekâ Kullanım Beyanı</span>
+  <h2 class="section-title">Şeffaflık notu</h2>
+  <p class="section-subtitle">
+    Bu proje kapsamında web sayfası tasarımı (HTML/SCSS), R kodlarının yapılandırılması, analiz akışının kurgulanması ve yorumların dil bakımından düzenlenmesi aşamalarında Anthropic Claude'dan destek alınmıştır. Analiz soruları, veri yorumları ve sonuç çıkarımları kendi akademik değerlendirmemle gözden geçirilmiş; üretilen tüm kod ve çıktılar R ortamında çalıştırılarak doğrulanmıştır. Sayfanın sağ üst köşesindeki "Code" menüsünden tüm kaynak kod görüntülenebilir.
+  </p>
+  <div class="finding-card">
+    <div class="finding-title">Kullanılan temel komut</div>
+    <p class="finding-desc" style="font-style:italic;">
+      "İstanbul deniz iskeleleri yolcu verisiyle (İBB açık veri, 2024–2025) R ve Quarto kullanarak iş analitiği dönem projemi adım adım hazırlamama yardım et; veri temizleme, keşifsel analiz, görselleştirme ve sayfa tasarımı dahil."
+    </p>
+  </div>
 </section>
 ```
